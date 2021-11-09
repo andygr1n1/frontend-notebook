@@ -1,6 +1,6 @@
 {
-  "name": "matcas-construct",
-  "version": "0.0.0",
+  "name": "frontend-notebook",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
