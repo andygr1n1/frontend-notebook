@@ -1,0 +1,8 @@
+.active {
+    font-weight: bolder;
+}
+
+.top-navigation-menu {
+    display: flex;
+    justify-content: center;
+}
