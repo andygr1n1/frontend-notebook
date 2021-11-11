@@ -10,7 +10,7 @@ export const ReactNotebook = () => {
                     <NavLink to="react-router-6">React Router 6</NavLink>
                 </span>
             </div>
-            <Outlet/>
+            <Outlet />
         </>
     )
 }

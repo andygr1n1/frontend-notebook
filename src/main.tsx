@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
-import './normalize.css'
+import './styles/normalize.css'
 import 'antd/dist/antd.css'
-import './index.css'
+import './styles/index.css'
 
 import App from './App'
 
@@ -13,5 +13,5 @@ ReactDOM.render(
             <App />
         </BrowserRouter>
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById('root'),
 )
