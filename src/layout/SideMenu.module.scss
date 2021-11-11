@@ -1,0 +1,23 @@
+.side-menu {
+    display: flex;
+    justify-content: flex-end;
+    width: 25%;
+    overflow: auto;
+}
+
+.ul {
+    width: 200px;
+
+    li {
+        cursor: pointer;
+        padding: 5px;
+        transition: all 0.3s ease-in-out;
+        border-bottom: 2px solid #1890ff;
+        &:hover {
+            background: #1890ff;
+            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        }
+    }
+}
