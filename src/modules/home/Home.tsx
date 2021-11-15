@@ -4,7 +4,7 @@ import { HomeSideMenu } from './HomeSideMenu'
 
 export const Home = () => {
     return (
-        <div className={styles['home']}>
+        <div className={styles['page']}>
             <HomeSideMenu />
             <HomePageContent />
         </div>

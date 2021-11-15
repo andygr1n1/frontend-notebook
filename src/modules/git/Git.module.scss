@@ -1,0 +1,16 @@
+.page {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 47px);
+    margin: 0 auto;
+}
+
+.active {
+    & li {
+        color: white;
+        background: #1890ff;
+        -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    }
+}
