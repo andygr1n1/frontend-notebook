@@ -1,12 +1,5 @@
-import styles from './Home.module.scss'
-import { HomePageContent } from './HomePageContent'
-import { HomeSideMenu } from './HomeSideMenu'
+import { Module } from '../../layout/Module'
 
 export const Home = () => {
-    return (
-        <div className={styles['page']}>
-            <HomeSideMenu />
-            <HomePageContent />
-        </div>
-    )
+    return <Module routes={[]} />
 }

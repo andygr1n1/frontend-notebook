@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Git } from './modules/git/Git'
+import { GitNotes } from './modules/git/GitNotes'
 import { Stash } from './modules/git/pages/Stash'
 import { CleanUpRemoteBranch } from './modules/git/pages/CleanUpRemoteBranch'
 import { Home } from './modules/home/Home'
@@ -15,7 +15,7 @@ export const AppRoutes = () => {
             <Route path="/*" element={<Home />}>
                 <Route path="" element={<HomeIndex />} />
             </Route>
-            <Route path="/git/*" element={<Git />}>
+            <Route path="/git/*" element={<GitNotes />}>
                 <Route path="" element={<GitIndex />} />
                 <Route path="stash" element={<Stash />} />
                 <Route path="clean_up_remote_branch" element={<CleanUpRemoteBranch />} />

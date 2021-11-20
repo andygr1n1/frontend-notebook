@@ -1,11 +1,6 @@
-import { ReactNotesPageContent } from './ReactNotesPageContent'
-import { ReactNotesSideMenu } from './ReactNotesSideMenu'
+import { Module } from '../../layout/Module'
+import { reactRoutes } from '../../local-db/react_routes'
 
 export const ReactNotes = () => {
-    return (
-        <div className="module-wrapper">
-            <ReactNotesSideMenu />
-            <ReactNotesPageContent />
-        </div>
-    )
+    return <Module routes={reactRoutes} />
 }
