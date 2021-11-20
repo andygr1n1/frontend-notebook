@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  frontend-notebook:
+    container_name: frontend-notebook-container
+    build: .
+    ports:
+      - '9998:9998'    
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - PORT=9998
+    restart: unless-stopped

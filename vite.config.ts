@@ -6,7 +6,8 @@ import { ViteAliases } from 'vite-aliases'
 // https://vitejs.dev/config/
 export default defineConfig({
     server: {
-        port: 9999,
+        host: '0.0.0.0',
+        port: 9998,
     },
     plugins: [react(), svgr(), ViteAliases()],
 })

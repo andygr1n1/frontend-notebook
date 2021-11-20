@@ -4,10 +4,10 @@ import { NavLink, Outlet } from 'react-router-dom'
 export const ReactNotebook = () => {
     return (
         <>
-            <h1>R E A C T</h1>
+            <h1>R E A C T -{'>'} GO PRO</h1>
             <div className={styles['nav']}>
                 <span>
-                    <NavLink to="react-router-6">React Router 6</NavLink>
+                    <NavLink to="react-router-6">React Router 6888</NavLink>
                 </span>
             </div>
             <Outlet />
