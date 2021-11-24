@@ -1,0 +1,11 @@
+.flex {
+    display: flex;
+}
+
+.relative {
+    position: relative;
+}
+
+.m-auto {
+    margin: 0 auto;
+}

@@ -8,7 +8,9 @@ import { ReactRouter6 } from './modules/react/pages/ReactRouter6'
 import { GitIndex } from './modules/git/pages/GitIndex'
 import { HomeIndex } from './modules/home/pages/HomeIndex'
 import { ReactIndex } from './modules/react/pages/ReactIndex'
-import { InteractiveRebase } from './modules/git/pages/InteractiveRebase'
+import { RewritingHistory } from './modules/git/pages/RewritingHistory'
+import { GitRoutes } from './local-db/GitRoutes'
+import { ReactRoutes } from './local-db/ReactRoutes'
 
 export const AppRoutes = () => {
     return (
@@ -18,13 +20,15 @@ export const AppRoutes = () => {
             </Route>
             <Route path="/git/*" element={<GitNotes />}>
                 <Route path="" element={<GitIndex />} />
-                <Route path="stash" element={<Stash />} />
-                <Route path="clean_up_remote_branch" element={<CleanUpRemoteBranch />} />
-                <Route path="interactive_rebase" element={<InteractiveRebase />} />
+                {GitRoutes.map((route) => (
+                    <Route path={route.route} element={route.component} />
+                ))}
             </Route>
             <Route path="/react/*" element={<ReactNotes />}>
                 <Route path="" element={<ReactIndex />} />
-                <Route path="react-router-6" element={<ReactRouter6 />} />
+                {ReactRoutes.map((route) => (
+                    <Route path={route.route} element={route.component} />
+                ))}
             </Route>
         </Routes>
     )

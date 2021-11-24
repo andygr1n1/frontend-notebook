@@ -1,12 +1,19 @@
-import { IGitRoute } from '../helpers/types'
-import { PageContent } from './PageContent'
+import styles from './Module.module.scss'
+import { Outlet } from 'react-router-dom'
+import { IRoute } from '../helpers/types'
 import { SideMenu } from './SideMenu'
 
-export const Module: React.FC<{ routes: IGitRoute[] }> = ({ routes }) => {
+export const Module: React.FC<{ routes: IRoute[] }> = ({ routes }) => {
     return (
         <div className="module-wrapper">
-            <SideMenu routes={routes} />
-            <PageContent />
+            <div className="flex m-auto">
+                <div className="relative">
+                    <SideMenu routes={routes} />
+                </div>
+                <div className={styles['content']}>
+                    <Outlet />
+                </div>
+            </div>
         </div>
     )
 }

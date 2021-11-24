@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './styles/normalize.css'
 import 'antd/dist/antd.css'
 import './styles/index.css'
+import './styles/joker.css'
 
 import App from './App'
 

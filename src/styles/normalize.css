@@ -54,15 +54,15 @@ a:visited {
     text-decoration: none;
 }
 h1 {
-    font-size: 2em;
+    font-size: 3em;
     margin: 0.67em 0;
 }
 h2 {
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0.83em 0;
 }
 h3 {
-    font-size: 1.17em;
+    font-size: 1.5em;
     margin: 1em 0;
 }
 h4 {
@@ -154,6 +154,7 @@ ol {
 img {
     border: 0;
     -ms-interpolation-mode: bicubic;
+    width: -webkit-fill-available;
 }
 svg:not(:root) {
     overflow: hidden;

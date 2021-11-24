@@ -1,6 +1,6 @@
 import { Module } from '../../layout/Module'
-import { reactRoutes } from '../../local-db/react_routes'
+import { ReactRoutes } from '../../local-db/ReactRoutes'
 
 export const ReactNotes = () => {
-    return <Module routes={reactRoutes} />
+    return <Module routes={ReactRoutes} />
 }

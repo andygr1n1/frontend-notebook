@@ -1,6 +1,6 @@
-import { gitRoutes } from '../../local-db/git_routes'
+import { GitRoutes } from '../../local-db/GitRoutes'
 import { Module } from '../../layout/Module'
 
 export const GitNotes = () => {
-    return <Module routes={gitRoutes} />
+    return <Module routes={GitRoutes} />
 }
