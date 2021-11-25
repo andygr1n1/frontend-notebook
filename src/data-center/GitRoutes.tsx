@@ -4,6 +4,7 @@ import { ChangeRemoteRepository } from '../modules/git/pages/ChangeRemoteReposit
 import { CleanUpRemoteBranch } from '../modules/git/pages/CleanUpRemoteBranch'
 import { DeleteBranch } from '../modules/git/pages/DeleteBranch'
 import { DeleteCommit } from '../modules/git/pages/DeleteCommit'
+import { GitApps } from '../modules/git/pages/GitApps'
 import { RewritingHistory } from '../modules/git/pages/RewritingHistory'
 import { Stash } from '../modules/git/pages/Stash'
 
@@ -35,4 +36,5 @@ export const GitRoutes: IRoute[] = [
         title: 'Change remote repository',
         component: <ChangeRemoteRepository />,
     },
+    { route: 'git-apps', title: '🔖 Apps', component: <GitApps /> },
 ]
