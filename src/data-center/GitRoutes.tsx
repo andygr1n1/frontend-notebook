@@ -1,14 +1,15 @@
-import { DeleteOutlined } from '@ant-design/icons'
 import { IRoute } from '../helpers/types'
 import { ChangeBranchName } from '../modules/git/pages/ChangeBranchName'
 import { ChangeRemoteRepository } from '../modules/git/pages/ChangeRemoteRepository'
 import { CleanUpRemoteBranch } from '../modules/git/pages/CleanUpRemoteBranch'
 import { DeleteBranch } from '../modules/git/pages/DeleteBranch'
+import { DeleteCommit } from '../modules/git/pages/DeleteCommit'
 import { RewritingHistory } from '../modules/git/pages/RewritingHistory'
 import { Stash } from '../modules/git/pages/Stash'
 
 export const GitRoutes: IRoute[] = [
     { route: 'stash', title: 'Stash', component: <Stash /> },
+    { route: 'delete_commit', title: 'Delete Commit', component: <DeleteCommit /> },
     {
         route: 'clean_up_remote_branch',
         title: 'Clean up remote branch',

@@ -9,8 +9,8 @@ import { GitIndex } from './modules/git/pages/GitIndex'
 import { HomeIndex } from './modules/home/pages/HomeIndex'
 import { ReactIndex } from './modules/react/pages/ReactIndex'
 import { RewritingHistory } from './modules/git/pages/RewritingHistory'
-import { GitRoutes } from './local-db/GitRoutes'
-import { ReactRoutes } from './local-db/ReactRoutes'
+import { GitRoutes } from './data-center/GitRoutes'
+import { ReactRoutes } from './data-center/ReactRoutes'
 
 export const AppRoutes = () => {
     return (
