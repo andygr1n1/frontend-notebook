@@ -2,5 +2,16 @@ import { EMPTY_PAGE_LOGO_ENUM } from '../../../helpers/enums'
 import { EmptyPageLogo } from '../../../mini-components/EmptyPageLogo'
 
 export const ReactIndex = () => {
-    return <EmptyPageLogo icon={EMPTY_PAGE_LOGO_ENUM.REACT} />
+    // return <EmptyPageLogo icon={EMPTY_PAGE_LOGO_ENUM.REACT} />
+    return (
+        <>
+            <h1>
+                React&nbsp;
+                <a href="https://reactjs.org/" target="_blank">
+                    📚
+                </a>
+            </h1>
+            <p>A JavaScript library for building user interfaces</p>
+        </>
+    )
 }

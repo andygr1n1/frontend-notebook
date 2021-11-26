@@ -11,6 +11,9 @@ import { ReactIndex } from './modules/react/pages/ReactIndex'
 import { RewritingHistory } from './modules/git/pages/RewritingHistory'
 import { GitRoutes } from './data-center/GitRoutes'
 import { ReactRoutes } from './data-center/ReactRoutes'
+import { NodejsRoutes } from './data-center/NodejsRoutes'
+import { NodejsNotes } from './modules/nodejs/NodejsNotes'
+import { NodeIndex } from './modules/nodejs/pages/NodeIndex'
 
 export const AppRoutes = () => {
     return (
@@ -27,6 +30,12 @@ export const AppRoutes = () => {
             <Route path="/react/*" element={<ReactNotes />}>
                 <Route path="" element={<ReactIndex />} />
                 {ReactRoutes.map((route) => (
+                    <Route path={route.route} element={route.component} />
+                ))}
+            </Route>
+            <Route path="/nodejs/*" element={<NodejsNotes />}>
+                <Route path="" element={<NodeIndex />} />
+                {NodejsRoutes.map((route) => (
                     <Route path={route.route} element={route.component} />
                 ))}
             </Route>
