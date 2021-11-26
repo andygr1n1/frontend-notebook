@@ -1,3 +1,6 @@
+@import './padding.css';
+@import './margin.css';
+
 .flex {
     display: flex;
 }
@@ -8,4 +11,8 @@
 
 .m-auto {
     margin: 0 auto;
+}
+
+.w-full {
+    width: 100%;
 }

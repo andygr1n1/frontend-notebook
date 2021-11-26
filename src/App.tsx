@@ -1,7 +1,7 @@
 import { TopNavigationMenu } from './layout/TopNavigationMenu'
 import { AppRoutes } from './Routes'
 
-function App() {
+export const App = () => {
     return (
         <>
             <TopNavigationMenu />
@@ -9,5 +9,3 @@ function App() {
         </>
     )
 }
-
-export default App
