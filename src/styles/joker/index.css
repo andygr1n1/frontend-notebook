@@ -1,6 +1,6 @@
 @import './padding.css';
 @import './margin.css';
-
+@import './font-size.css';
 .flex {
     display: flex;
 }
@@ -15,4 +15,20 @@
 
 .w-full {
     width: 100%;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.gap-10px {
+    gap: 10px;
 }
