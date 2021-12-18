@@ -3,6 +3,7 @@ import { Code } from '../../../mini-components/Code'
 export const Stash = () => {
     return (
         <>
+            <div>anchor menu</div>
             <h1>
                 Git stash - hide the changes
                 <a

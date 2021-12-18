@@ -8,7 +8,7 @@ export const NodeIndex = () => {
                     📚
                 </a>
             </h1>
-            <p>
+            <p className="text-red-500">
                 As an asynchronous event-driven JavaScript runtime, Node.js is designed to
                 build scalable network applications.{' '}
             </p>

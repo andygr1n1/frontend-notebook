@@ -13,6 +13,9 @@ import { ReactRoutes } from './data-center/ReactRoutes'
 import { NodejsRoutes } from './data-center/NodejsRoutes'
 import { NodejsNotes } from './modules/nodejs/NodejsNotes'
 import { NodeIndex } from './modules/nodejs/pages/NodeIndex'
+import { UbuntuRoutes } from './data-center/UbuntuRoutes'
+import { UbuntuNotes } from './modules/ubuntu/UbuntuNotes'
+import { UbuntuIndex } from './modules/ubuntu/pages/UbuntuIndex'
 
 export const AppRoutes = () => {
     return (
@@ -23,6 +26,12 @@ export const AppRoutes = () => {
             <Route path="/git/*" element={<GitNotes />}>
                 <Route path="" element={<GitIndex />} />
                 {GitRoutes.map((route) => (
+                    <Route key={route.id} path={route.route} element={route.component} />
+                ))}
+            </Route>
+            <Route path="/ubuntu/*" element={<UbuntuNotes />}>
+                <Route path="" element={<UbuntuIndex />} />
+                {UbuntuRoutes.map((route) => (
                     <Route key={route.id} path={route.route} element={route.component} />
                 ))}
             </Route>
