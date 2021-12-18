@@ -18,6 +18,13 @@ export const TopNavigationMenu = () => {
                     Home
                 </NavLink>
             </Menu.Item>
+            <Menu.Item key="Ubuntu" icon={<ThunderboltOutlined />}>
+                <NavLink
+                    className={(navData) => (navData.isActive ? styles['active'] : '')}
+                    to="/ubuntu">
+                    Ubuntu
+                </NavLink>
+            </Menu.Item>
             <Menu.Item key="React" icon={<ThunderboltOutlined />}>
                 <NavLink
                     className={(navData) => (navData.isActive ? styles['active'] : '')}
@@ -36,7 +43,7 @@ export const TopNavigationMenu = () => {
                 <NavLink
                     className={(navData) => (navData.isActive ? styles['active'] : '')}
                     to="/nodejs">
-                    Git
+                    Node js
                 </NavLink>
             </Menu.Item>
         </Menu>
