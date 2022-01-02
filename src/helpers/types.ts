@@ -4,3 +4,8 @@ export type IRoute = {
     title: string
     component: JSX.Element
 }
+
+export type IAnchor = {
+    id: string
+    title: string
+}

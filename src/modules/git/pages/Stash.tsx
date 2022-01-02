@@ -1,9 +1,22 @@
+import { AnchorMenu } from '../../../layout/AnchorMenu'
 import { Code } from '../../../mini-components/Code'
+
+const anchors = [
+    { id: '#git-stash', title: 'Git stash' },
+    { id: '#git-stash-save', title: 'Git stash save' },
+    { id: '#git-stash-list', title: 'Git stash list' },
+    { id: '#git-stash-apply', title: 'Git stash apply' },
+    { id: '#git-stash-pop', title: 'Git stash pop' },
+    { id: '#git-stash-show', title: 'Git stash show' },
+    { id: '#git-stash-branch', title: 'Git stash branch #name' },
+    { id: '#git-stash-drop', title: 'Git stash drop' },
+    { id: '#git-stash-clear', title: 'Git stash clear' },
+]
 
 export const Stash = () => {
     return (
         <>
-            <div>anchor menu</div>
+            <AnchorMenu anchors={anchors} />
             <h1>
                 Git stash - hide the changes
                 <a
@@ -18,12 +31,12 @@ export const Stash = () => {
                 файлы к исходному состоянию. То есть git stash прячет изменения в файлах и
                 сохраняет эти изменения отдельно, чтобы потом можно было их вернуть.
             </p>
-            <h2>Git stash</h2>
+            <h2 id="#git-stash">Git stash</h2>
             <p>
                 Чтобы спрятать изменения достаточно выполнить команду:
                 <Code code={'git stash'} />
             </p>
-            <h2>Git stash save</h2>
+            <h2 id="#git-stash-save">Git stash save</h2>
             <p>
                 Команда git stash save выполняет то же самое, что и git stash, но имеет
                 несколько полезных опций. Например, можно сохранить изменения и добавить
