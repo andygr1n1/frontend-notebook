@@ -15,7 +15,7 @@ const anchors = [
 
 export const Stash = () => {
     return (
-        <>
+        <div>
             <AnchorMenu anchors={anchors} />
             <h1>
                 Git stash - hide the changes
@@ -31,12 +31,12 @@ export const Stash = () => {
                 файлы к исходному состоянию. То есть git stash прячет изменения в файлах и
                 сохраняет эти изменения отдельно, чтобы потом можно было их вернуть.
             </p>
-            <h2 id="#git-stash">Git stash</h2>
+            <h2 id="git-stash">Git stash</h2>
             <p>
                 Чтобы спрятать изменения достаточно выполнить команду:
                 <Code code={'git stash'} />
             </p>
-            <h2 id="#git-stash-save">Git stash save</h2>
+            <h2 id="git-stash-save">Git stash save</h2>
             <p>
                 Команда git stash save выполняет то же самое, что и git stash, но имеет
                 несколько полезных опций. Например, можно сохранить изменения и добавить
@@ -112,12 +112,12 @@ export const Stash = () => {
                 Можно указать идентификатор прятанья, которое нужно удалить:
                 <Code code={'git stash drop stash@{1}'} />
             </p>
-            <h2>Git stash clear</h2>
+            <h2 id="git-stash-clear">Git stash clear</h2>
             <p>
                 Команда git stash clear удаляет все прятанья. Будьте внимательные перед
                 тем, как ее выполнять, чтобы не удалить нужные данные:
                 <Code code={'git stash clear'} />
             </p>
-        </>
+        </div>
     )
 }

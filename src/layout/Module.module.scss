@@ -1,0 +1,4 @@
+.module-wrapper {
+    height: calc(100% - 46px);
+    @apply flex relative flex-auto m-auto bg-white;
+}
