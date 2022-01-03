@@ -5,11 +5,14 @@ import 'antd/dist/antd.css'
 import './styles/index.css'
 
 import { App } from './App'
+import { StoreProvider } from './StoreProvider'
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App />
+            <StoreProvider>
+                <App />
+            </StoreProvider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root'),

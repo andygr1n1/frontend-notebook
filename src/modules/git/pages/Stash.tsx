@@ -2,22 +2,23 @@ import { AnchorMenu } from '../../../layout/AnchorMenu'
 import { Code } from '../../../mini-components/Code'
 
 const anchors = [
-    { id: '#git-stash', title: 'Git stash' },
-    { id: '#git-stash-save', title: 'Git stash save' },
-    { id: '#git-stash-list', title: 'Git stash list' },
-    { id: '#git-stash-apply', title: 'Git stash apply' },
-    { id: '#git-stash-pop', title: 'Git stash pop' },
-    { id: '#git-stash-show', title: 'Git stash show' },
-    { id: '#git-stash-branch', title: 'Git stash branch #name' },
-    { id: '#git-stash-drop', title: 'Git stash drop' },
-    { id: '#git-stash-clear', title: 'Git stash clear' },
+    { id: 'git-stash-start', title: 'To top' },
+    { id: 'git-stash', title: 'Git stash' },
+    { id: 'git-stash-save', title: 'Git stash save' },
+    { id: 'git-stash-list', title: 'Git stash list' },
+    { id: 'git-stash-apply', title: 'Git stash apply' },
+    { id: 'git-stash-pop', title: 'Git stash pop' },
+    { id: 'git-stash-show', title: 'Git stash show' },
+    { id: 'git-stash-branch', title: 'Git stash branch #name' },
+    { id: 'git-stash-drop', title: 'Git stash drop' },
+    { id: 'git-stash-clear', title: 'Git stash clear' },
 ]
 
 export const Stash = () => {
     return (
         <div>
             <AnchorMenu anchors={anchors} />
-            <h1>
+            <h1 id="git-stash-start">
                 Git stash - hide the changes
                 <a
                     href="https://pingvinus.ru/git/1718#:~:text=%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0%20git%20stash%20%D0%BF%D1%80%D0%B5%D0%B4%D0%BD%D0%B0%D0%B7%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B0%20%D0%B4%D0%BB%D1%8F,%D0%BF%D0%BE%D1%82%D0%BE%D0%BC%20%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%20%D0%B1%D1%8B%D0%BB%D0%BE%20%D0%B8%D1%85%20%D0%B2%D0%B5%D1%80%D0%BD%D1%83%D1%82%D1%8C."
@@ -52,14 +53,14 @@ export const Stash = () => {
                 (или -u):
                 <Code code={'git stash save -u'} />
             </p>
-            <h2>Git stash list</h2>
+            <h2 id="git-stash-list">Git stash list</h2>
             <p>
                 Каждое выполнение git stash или git stash save на самом деле создает
                 отдельный коммит и сохраняет его отдельно (в стек). Команда git stash list
                 выводит список всех ваших прятаний:
                 <Code code={'git stash list'} />
             </p>
-            <h2>Git stash apply</h2>
+            <h2 id="git-stash-apply">Git stash apply</h2>
             <p>
                 Команда git stash apply берет самое свежее прятанье и применяет его к
                 репозиторию. То есть изменения, которые находятся в этом прятанье,
@@ -72,14 +73,14 @@ export const Stash = () => {
                 его идентификатор:
                 <Code code={'git stash apply stash@{1}'} />
             </p>
-            <h2>Git stash pop</h2>
+            <h2 id="git-stash-pop">Git stash pop</h2>
             <p>
                 Команда git stash pop выполняет все тоже самое, что и команда git stash
                 apply, но удаляет прятанье, которое она применяет к репозиторию:
                 <Code code={'git stash pop'} />
                 (<Code code={'git stash pop stash@{1}'} />)
             </p>
-            <h2>Git stash show</h2>
+            <h2 id="git-stash-show">Git stash show</h2>
             <p>
                 Команда git stash show показывает, какие изменения содержатся в прятанье.
                 <Code code={'git stash show'} />
@@ -93,7 +94,7 @@ export const Stash = () => {
                 Можно указать идентификатор прятанья, чтобы вывести изменения в нем:
                 <Code code={'git stash show stash@{1}'} />
             </p>
-            <h2>Git stash branch #name</h2>
+            <h2 id="git-stash-branch">Git stash branch #name</h2>
             <p>
                 Команда git stash branch #new_branch создает новую ветку с последним
                 прятаньем, и затем удаляет последнее прятанье (как git stash pop).
@@ -103,7 +104,7 @@ export const Stash = () => {
                 Можно также указать идентификатор прятанья:
                 <Code code={'git stash branch new-branch-name stash@{1}'} />
             </p>
-            <h2>Git stash drop</h2>
+            <h2 id="git-stash-drop">Git stash drop</h2>
             <p>
                 Команда git stash drop удаляет самое последнее прятанье:
                 <Code code={'git stash drop'} />
