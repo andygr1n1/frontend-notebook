@@ -1,9 +1,11 @@
 .active {
-    font-weight: bolder;
+    @apply font-bold;
 }
 
 .top-navigation-menu {
-    display: flex;
-    justify-content: center;
-    font-size: 18px;
+    @apply flex justify-center text-lg;
+
+    li {
+        @apply flex items-center m-3 py-3 #{!important};
+    }
 }

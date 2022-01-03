@@ -18,6 +18,10 @@
         "indent": ["warn", 4],
         "no-trailing-spaces": [1],
         "semi": ["warn", "never"],
-        "quotes": ["warn", "single"]
+        "quotes": ["warn", "single"],
+        "no-unused-vars": [
+            "warn",
+            { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }
+        ]
     }
 }

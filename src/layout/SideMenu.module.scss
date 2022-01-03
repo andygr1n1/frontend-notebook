@@ -1,6 +1,7 @@
-.routes-list, .anchors-list {
+.routes-list {
     @apply px-5;
-
+    position: sticky;
+    top: 0;
     li {
         cursor: pointer;
         padding: 5px;
@@ -9,6 +10,26 @@
         font-size: 15px;
         &:hover {
             background: #1890ff;
+            color: white;
+            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+            margin-left: -3px;
+        }
+    }
+}
+
+.anchors-list {
+    @apply absolute w-60 flex flex-col px-5 right-0;
+
+    li {
+        cursor: pointer;
+        padding: 5px;
+        border-bottom: 2px solid red;
+        transition: margin 0.3s ease-in-out;
+        font-size: 15px;
+        &:hover {
+            background: red;
             color: white;
             -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
             -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
