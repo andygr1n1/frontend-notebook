@@ -25,7 +25,9 @@ export const AnchorMenu: React.FC<{ anchors: IAnchor[] }> = observer(({ anchors 
                         scrollToElement(id)
                         navigate(`${location.pathname}#${id}`)
                     }}>
-                    <li>{title}</li>
+                    <li>
+                        <span>❖</span> <span className="italic">{title}</span>
+                    </li>
                 </a>
             ))}
         </ul>

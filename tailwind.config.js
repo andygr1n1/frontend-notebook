@@ -10,7 +10,11 @@ module.exports = {
             serif: ['Roboto Slab', ...defaultTheme.fontFamily.serif],
             mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
         },
-        extend: {},
+        extend: {
+            colors: {
+                'primary-color': '#10b981',
+            },
+        },
     },
-    plugins: [],
+    plugins: [require('tailwindcss-textshadow')],
 }

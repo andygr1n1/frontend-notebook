@@ -19,7 +19,7 @@ body {
 }
 
 code {
-    @apply font-mono text-blue-500 cursor-pointer text-base;
+    @apply font-mono text-primary-color cursor-pointer text-base;
 }
 
 #root {
@@ -48,7 +48,7 @@ h3 {
 
 h1.focused,
 h2.focused {
-    @apply text-red-500;
+    @apply text-emerald-500;
 }
 
 .module-wrapper {
