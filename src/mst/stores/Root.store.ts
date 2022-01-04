@@ -13,7 +13,15 @@ export const Root$ = types
             if (elementId) {
                 const element = document.getElementById(elementId)
                 element && element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                return
+
+                if (id && element) {
+                    const currentElementFocused = document.querySelector('.focused')
+
+                    if (currentElementFocused)
+                        currentElementFocused.classList.remove('focused')
+
+                    element.classList.add('focused')
+                }
             }
         },
     }))
