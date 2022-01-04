@@ -2,3 +2,8 @@
     height: calc(100% - 80px);
     @apply flex relative flex-auto m-auto bg-white py-3;
 }
+
+.outlet-wrap {
+    width: 1400px;
+    @apply pr-72 pl-24;
+}

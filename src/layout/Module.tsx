@@ -7,10 +7,9 @@ export const Module: React.FC<{ routes: IRoute[] }> = ({ routes }) => {
     return (
         <div className={styles['module-wrapper']}>
             <div className="flex overflow-auto">
-                <div className="w-60">
-                    <SideMenu routes={routes} />
-                </div>
-                <div className="w-1040px pr-60 text-lg">
+                <SideMenu routes={routes} />
+
+                <div className={styles['outlet-wrap']}>
                     <Outlet />
                 </div>
             </div>

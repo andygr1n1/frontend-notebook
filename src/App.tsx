@@ -20,9 +20,9 @@ const LocalStorageListener = () => {
     const location = useLocation()
 
     useEffect(() => {
-        const savedLocation: string = JSON.parse(
-            localStorage.getItem('useLocation') || '',
-        )
+        const getLocalStorage: string | null = localStorage.getItem('useLocation')
+        let savedLocation = ''
+        if (getLocalStorage) savedLocation = JSON.parse(getLocalStorage)
 
         setCurrentLocation(savedLocation)
 

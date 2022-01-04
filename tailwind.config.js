@@ -1,14 +1,16 @@
 const colors = require('tailwindcss/colors')
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         colors,
-        extend: {
-            width: {
-                '1040px': '1040px',
-            },
+        fontFamily: {
+            sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            serif: ['Roboto Slab', ...defaultTheme.fontFamily.serif],
+            mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
         },
+        extend: {},
     },
     plugins: [],
 }

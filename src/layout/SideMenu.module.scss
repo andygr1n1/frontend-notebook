@@ -1,5 +1,5 @@
 .routes-list {
-    @apply px-5;
+    @apply px-5 w-60;
     position: sticky;
     top: 0;
     li {
@@ -20,7 +20,7 @@
 }
 
 .anchors-list {
-    @apply absolute w-60 flex flex-col px-5 right-0;
+    @apply absolute w-60 flex flex-col px-5 mx-5 right-0;
 
     li {
         cursor: pointer;
