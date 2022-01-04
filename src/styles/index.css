@@ -35,11 +35,11 @@ h2 {
 }
 
 h1 {
-    @apply text-5xl py-5;
+    @apply text-5xl py-10;
 }
 
 h2 {
-    @apply text-3xl py-2;
+    @apply text-3xl py-10;
 }
 
 h3 {

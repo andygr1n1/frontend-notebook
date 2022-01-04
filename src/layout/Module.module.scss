@@ -1,9 +1,8 @@
 .module-wrapper {
-    height: calc(100% - 80px);
-    @apply flex relative flex-auto m-auto bg-white py-3;
+    @apply flex flex-col gap-3 relative flex-auto m-auto h-full bg-white;
 }
 
 .outlet-wrap {
     width: 1400px;
-    @apply pr-72 pl-24;
+    @apply pr-80 pl-24;
 }

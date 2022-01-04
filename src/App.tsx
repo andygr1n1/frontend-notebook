@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { TopNavigationMenu } from './layout/TopNavigationMenu'
 import { AppRoutes } from './Routes'
 import { useRootStore } from './StoreProvider'
 
@@ -8,7 +7,6 @@ export const App = () => {
     return (
         <>
             <LocalStorageListener />
-            <TopNavigationMenu />
             <AppRoutes />
         </>
     )
