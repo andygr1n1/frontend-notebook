@@ -1,14 +1,20 @@
+import { observer } from 'mobx-react-lite'
 import { NavLink } from 'react-router-dom'
-
-export const SideMenuLink: React.FC<{ route: string; title: string }> = ({
-    route,
-    title,
-}) => {
-    return (
-        <NavLink
-            className={(navData) => (navData.isActive ? 'sidemenu-navlink-active' : '')}
-            to={route}>
-            <li>{title}</li>
-        </NavLink>
-    )
-}
+import styles from '../layout/SideMenu.module.scss'
+export const SideMenuLink: React.FC<{ route: string; title: string }> = observer(
+    ({ route, title }) => {
+        return (
+            <li>
+                <NavLink
+                    className={(navData) => {
+                        return `${styles['navlink']} ${
+                            navData.isActive ? styles['active'] : ''
+                        }`
+                    }}
+                    to={route}>
+                    {title}
+                </NavLink>
+            </li>
+        )
+    },
+)

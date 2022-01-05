@@ -1,32 +1,31 @@
 .routes-list {
-    @apply px-5 w-60;
-    position: sticky;
-    top: 0;
+    @apply py-10 px-5 w-60 sticky top-0;
+
     li {
-        cursor: pointer;
-        padding: 5px;
-        border-bottom: 2px solid #1890ff;
-        transition: margin 0.3s ease-in-out;
-        font-size: 15px;
+        @apply cursor-pointer my-2 transition-all ease-out;
+
         &:hover {
-            background: #1890ff;
-            color: white;
-            -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-            -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-            margin-left: -3px;
+            @apply bg-primary-color text-white shadow-md;
         }
     }
 }
 
 .anchors-list {
-    @apply absolute w-60 flex flex-col px-5 mx-5 right-0;
+    @apply absolute w-60 flex flex-col px-5 py-10 mx-5 right-0;
 
     li {
-        @apply flex gap-2 items-center p-1 cursor-pointer transition-all ease-out;
+        @apply flex items-center justify-end p-2 gap-2 text-primary-color opacity-50 cursor-pointer transition-all ease-out;
 
         &:hover {
-            @apply bg-emerald-500 text-white;
+            @apply bg-primary-color opacity-100 text-white;
         }
     }
+}
+
+.navlink {
+    @apply flex p-2 w-full h-full border-none;
+}
+
+.active {
+    @apply bg-primary-color;
 }
