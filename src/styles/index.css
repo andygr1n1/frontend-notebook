@@ -8,26 +8,14 @@
 @tailwind components;
 @tailwind utilities;
 
-a,
-a:focus {
-    outline: none;
-}
-
 body {
-    @apply m-0 font-sans text-gray-600 text-lg;
+    @apply px-36 bg-gray-900;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 code {
     @apply font-mono text-primary-color cursor-pointer text-base;
-}
-
-#root {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: #edeef0;
 }
 
 h1,
@@ -47,14 +35,31 @@ h3 {
     @apply text-xl;
 }
 
-h1.focused,
-h2.focused {
+#root {
+    @apply flex flex-col gap-3 h-full bg-white font-sans text-lg text-gray-600;
+}
+
+#root.dark-theme {
+    @apply bg-gray-700;
+}
+
+#root.dark-theme,
+#root.dark-theme h1,
+#root.dark-theme h2,
+#root.dark-theme h3,
+#root.dark-theme h4,
+#root.dark-theme h5,
+#root.dark-theme h6 {
+    @apply text-gray-200;
+}
+
+#root h1.focused,
+#root h2.focused {
     @apply text-primary-color;
 }
 
-.module-wrapper {
-    display: flex;
-    width: 100%;
-    height: calc(100% - 47px);
-    margin: 0 auto;
+#root li,
+#root a,
+#root a:focus {
+    @apply outline-0 text-inherit;
 }
