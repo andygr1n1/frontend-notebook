@@ -13,7 +13,7 @@ export const App = () => {
 }
 
 const LocalStorageListener = () => {
-    const { setCurrentLocation } = useRootStore()
+    const { onChangeField } = useRootStore()
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -22,7 +22,7 @@ const LocalStorageListener = () => {
         let savedLocation = ''
         if (getLocalStorage) savedLocation = JSON.parse(getLocalStorage)
 
-        setCurrentLocation(savedLocation)
+        onChangeField('current_location', savedLocation)
 
         savedLocation && navigate(savedLocation)
     }, [])

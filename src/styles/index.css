@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import './normalize.css';
 @tailwind base;
 @tailwind components;
@@ -48,7 +49,7 @@ h3 {
 
 h1.focused,
 h2.focused {
-    @apply text-emerald-500;
+    @apply text-primary-color;
 }
 
 .module-wrapper {
@@ -56,12 +57,4 @@ h2.focused {
     width: 100%;
     height: calc(100% - 47px);
     margin: 0 auto;
-}
-
-.sidemenu-navlink-active > li {
-    color: white;
-    background: #1890ff;
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
