@@ -4,10 +4,11 @@ import { Dashboard } from '../../../mini-components/Dashboard'
 import { Paragraph } from '../../../layout/Paragraph'
 import { YoutubeOutlined, SlackOutlined } from '@ant-design/icons'
 import { Tooltip } from 'antd'
+import { Content } from '../../../layout/Content'
 
 export const ReactRouter6 = () => {
     return (
-        <>
+        <Content>
             <h1>React router 6</h1>
             <Paragraph>
                 In version 5, we used <RedChalk string="Switch" /> component to wrap our
@@ -214,6 +215,6 @@ export const ReactRouter6 = () => {
                     </Tooltip>
                 </div>
             </Paragraph>
-        </>
+        </Content>
     )
 }

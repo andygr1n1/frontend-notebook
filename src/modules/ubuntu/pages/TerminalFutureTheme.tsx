@@ -5,10 +5,10 @@ import { ColorBox } from '../../../mini-components/ColorBox'
 import { Paragraph } from '../../../layout/Paragraph'
 // import { YoutubeOutlined, SlackOutlined } from '@ant-design/icons'
 // import { Tooltip } from 'antd'
-
+import { Content } from '../../../layout/Content'
 export const TerminalFutureTheme = () => {
     return (
-        <>
+        <Content>
             <h1>Terminal Future Theme</h1>
             <Paragraph>
                 Good guys, since I'm on ubuntu, from start I designed a beautiful theme
@@ -67,7 +67,7 @@ export const TerminalFutureTheme = () => {
                     <ColorPick code="#FFFFFF" />
                 </div>
             </Paragraph>
-        </>
+        </Content>
     )
 }
 

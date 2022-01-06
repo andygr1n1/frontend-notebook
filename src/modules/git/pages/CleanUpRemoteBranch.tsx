@@ -1,8 +1,9 @@
+import { Content } from '../../../layout/Content'
 import { Code } from '../../../mini-components/Code'
 
 export const CleanUpRemoteBranch = () => {
     return (
-        <>
+        <Content>
             <h1>Clean up remote branch</h1>
             <p>
                 Consider to run <Code code={'git fetch --prune'} /> On a regular basis in
@@ -20,6 +21,6 @@ export const CleanUpRemoteBranch = () => {
                 add <Code code={'git config --global fetch.prune true'} /> or
                 <Code code={'git config --system fetch.prune true'} />
             </p>
-        </>
+        </Content>
     )
 }

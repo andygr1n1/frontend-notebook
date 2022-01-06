@@ -8,6 +8,20 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+    width: 0px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: none;
+}
+::-webkit-scrollbar-thumb {
+    background: white;
+    -webkit-box-shadow: none;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: none;
+}
+
 body {
     @apply px-36 bg-gray-900;
     -webkit-font-smoothing: antialiased;
@@ -36,7 +50,7 @@ h3 {
 }
 
 #root {
-    @apply flex flex-col gap-3 h-full bg-white font-sans text-lg text-gray-600;
+    @apply flex flex-col gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600;
 }
 
 #root.dark-theme {

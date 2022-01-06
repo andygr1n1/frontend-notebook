@@ -4,6 +4,22 @@ import { AppRoutes } from './Routes'
 import { useRootStore } from './StoreProvider'
 
 export const App = () => {
+    const { onChangeField } = useRootStore()
+
+    useEffect(() => {
+        const getColorThemeFromLocalStorage: string | null =
+            localStorage.getItem('color-theme')
+
+        console.log('getColorThemeFromLocalStorage', getColorThemeFromLocalStorage)
+
+        if (
+            getColorThemeFromLocalStorage &&
+            typeof JSON.parse(getColorThemeFromLocalStorage) === 'boolean'
+        ) {
+            onChangeField('dark_mode', JSON.parse(getColorThemeFromLocalStorage))
+        }
+    }, [])
+
     return (
         <>
             <LocalStorageListener />

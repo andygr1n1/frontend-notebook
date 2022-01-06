@@ -1,6 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { IAnchor } from '../helpers/types'
-import styles from './SideMenu.module.scss'
+import styles from './Content.module.scss'
 import { useEffect } from 'react'
 import { useRootStore } from '../StoreProvider'
 import { useLocation, useNavigate } from 'react-router-dom'

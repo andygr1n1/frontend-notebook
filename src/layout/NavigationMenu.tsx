@@ -92,6 +92,7 @@ const ThemeMode = observer(() => {
             className="absolute right-3 flex items-center justify-center w-10 h-10 cursor-pointer rounded-full select-none"
             onClick={() => {
                 onChangeField('dark_mode', !dark_mode)
+                localStorage.setItem('color-theme', JSON.stringify(!dark_mode))
             }}>
             {dark_mode ? (
                 <span className="material-icons text-3xl text-yellow-500 hover:animate-spin-slow">

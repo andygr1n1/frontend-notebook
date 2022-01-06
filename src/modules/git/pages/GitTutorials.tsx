@@ -1,6 +1,8 @@
+import { Content } from '../../../layout/Content'
+
 export const GitTutorials = () => {
     return (
-        <>
+        <Content>
             <h1>Git tutorials</h1>
             <p>
                 <a
@@ -11,6 +13,6 @@ export const GitTutorials = () => {
                     Submodules and more
                 </a>
             </p>
-        </>
+        </Content>
     )
 }

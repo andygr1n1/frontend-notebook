@@ -1,0 +1,19 @@
+.routes-list {
+    @apply relative w-80 py-10 px-5 overflow-auto border-r border-primary-color border-opacity-10;
+
+    li {
+        @apply cursor-pointer my-2 transition-all ease-out;
+
+        &:hover {
+            @apply bg-primary-color text-white shadow-md;
+        }
+    }
+}
+
+.navlink {
+    @apply flex p-2 w-full h-full;
+
+    &.active {
+        @apply bg-primary-color;
+    }
+}
