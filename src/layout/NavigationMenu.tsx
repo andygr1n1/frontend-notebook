@@ -132,7 +132,6 @@ const ThemeMode = observer(() => {
 
         if (rootPage && dark_mode) rootPage.classList.add('dark-theme')
         if (rootPage && !dark_mode) rootPage.classList.remove('dark-theme')
-        console.log(dark_mode)
     }, [dark_mode])
 
     return (

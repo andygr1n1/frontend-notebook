@@ -8,87 +8,92 @@
 @tailwind components;
 @tailwind utilities;
 
-::-webkit-scrollbar {
-    width: 0px;
-}
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: none;
-}
-::-webkit-scrollbar-thumb {
-    background: white;
-    -webkit-box-shadow: none;
-}
-::-webkit-scrollbar-thumb:window-inactive {
-    background: none;
-}
+@layer base {
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: none;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: white;
+        -webkit-box-shadow: none;
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: none;
+    }
 
-body {
-    @apply px-36 bg-gray-900;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+    body {
+        @apply px-36 bg-gray-900;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 
-code {
-    @apply font-mono text-primary-color cursor-pointer text-base;
-}
+    #root {
+        @apply flex flex-col items-center gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
+    }
 
-h1,
-h2 {
-    @apply font-bold font-serif select-none;
-}
+    #root.dark-theme {
+        @apply bg-gray-700 text-gray-200;
+    }
 
-h1 {
-    @apply text-5xl py-10;
-}
+    code {
+        @apply font-mono text-primary-color cursor-pointer text-base;
+    }
 
-h2 {
-    @apply text-3xl py-10;
-}
+    h1 {
+        @apply text-5xl py-10;
+    }
 
-h3 {
-    @apply text-xl;
-}
+    h2 {
+        @apply text-3xl py-10;
+    }
 
-#root {
-    @apply flex flex-col items-center gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
-}
+    h3 {
+        @apply text-xl;
+    }
 
-#root.dark-theme {
-    @apply bg-gray-700;
-}
+    h1,
+    h2 {
+        @apply font-bold font-serif select-none;
+    }
 
-#root.dark-theme,
-#root.dark-theme h1,
-#root.dark-theme h2,
-#root.dark-theme h3,
-#root.dark-theme h4,
-#root.dark-theme h5,
-#root.dark-theme h6 {
-    @apply text-gray-200;
-}
+    ul,
+    li,
+    a,
+    a:focus,
+    a:active,
+    a:hover,
+    a:visited {
+        @apply outline-0 text-inherit;
+    }
 
-#root h1.focused,
-#root h2.focused {
-    @apply text-primary-color;
-}
+    .dark-theme h1,
+    .dark-theme h2,
+    .dark-theme h3,
+    .dark-theme h4,
+    .dark-theme h5,
+    .dark-theme h6 {
+        @apply text-gray-200;
+    }
 
-#root li,
-#root a,
-#root a:focus {
-    @apply outline-0 text-inherit m-0 p-0;
+    h1.focused,
+    h2.focused {
+        @apply text-primary-color;
+    }
 }
 
 @layer components {
     .left-menu-link {
-        @apply flex !p-3 w-full h-full cursor-pointer transition-all ease-out hover:!text-primary-color hover:font-bold;
+        @apply flex p-3 w-full h-full cursor-pointer transition-all ease-out hover:text-primary-color hover:font-bold;
     }
 
     .nav-menu-link {
-        @apply w-28 flex gap-3 px-2 !py-1 items-center justify-center hover:text-primary-color hover:animate-pulse hover:font-bold transition-all ease-in-out;
+        @apply flex items-center justify-center gap-3 w-28 px-2 py-1 transition-all ease-in-out hover:text-primary-color hover:animate-pulse hover:font-bold;
     }
 
     .anchor-menu-link {
-        @apply flex gap-4 justify-end items-center !p-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
+        @apply flex gap-4 justify-end items-center p-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
         hover:!text-primary-color hover:font-bold hover:opacity-100 hover:animate-pulse;
     }
 }
