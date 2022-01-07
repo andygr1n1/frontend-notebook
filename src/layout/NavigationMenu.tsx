@@ -11,7 +11,7 @@ import { useRootStore } from '../StoreProvider'
 
 export const NavigationMenu = () => {
     return (
-        <ul className="relative flex items-center justify-center px-4 py-2 gap-10 border-t border-primary-color border-opacity-30">
+        <ul className="relative flex w-full items-center justify-center px-4 py-2 gap-10 border-t border-primary-color border-opacity-30">
             <li>
                 <NavLink
                     className={(navData) => {

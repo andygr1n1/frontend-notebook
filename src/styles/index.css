@@ -50,7 +50,7 @@ h3 {
 }
 
 #root {
-    @apply flex flex-col gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
+    @apply flex flex-col items-center gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
 }
 
 #root.dark-theme {
