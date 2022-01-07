@@ -50,7 +50,7 @@ h3 {
 }
 
 #root {
-    @apply flex flex-col gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600;
+    @apply flex flex-col gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
 }
 
 #root.dark-theme {
@@ -75,5 +75,20 @@ h3 {
 #root li,
 #root a,
 #root a:focus {
-    @apply outline-0 text-inherit;
+    @apply outline-0 text-inherit m-0 p-0;
+}
+
+@layer components {
+    .left-menu-link {
+        @apply flex !p-3 w-full h-full cursor-pointer transition-all ease-out hover:!text-primary-color hover:font-bold;
+    }
+
+    .nav-menu-link {
+        @apply w-28 flex gap-3 px-2 !py-1 items-center justify-center hover:text-primary-color hover:animate-pulse hover:font-bold transition-all ease-in-out;
+    }
+
+    .anchor-menu-link {
+        @apply flex gap-4 justify-end items-center !p-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
+        hover:!text-primary-color hover:font-bold hover:opacity-100 hover:animate-pulse;
+    }
 }

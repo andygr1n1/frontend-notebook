@@ -4,6 +4,8 @@ export const Root$ = types
     .model('Root$', {
         current_location: '',
         dark_mode: true,
+        pen_color: 'emerald',
+        pen_color_menu: false,
     })
     .actions((self) => ({
         setCurrentLocation(newLocation: string): void {
@@ -27,5 +29,17 @@ export const Root$ = types
                     element.classList.add('focused')
                 }
             }
+        },
+    }))
+    .actions((self) => ({
+        onChangePenColor(new_color: string): void {
+            console.log('new_color', typeof new_color, new_color)
+            self.pen_color_menu = false
+
+            if (self.pen_color === new_color) {
+                return
+            }
+
+            self.pen_color = new_color
         },
     }))

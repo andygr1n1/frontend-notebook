@@ -1,6 +1,5 @@
 import { observer } from 'mobx-react-lite'
 import { IAnchor } from '../helpers/types'
-import styles from './Content.module.scss'
 import { useEffect } from 'react'
 import { useRootStore } from '../StoreProvider'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -15,20 +14,21 @@ export const AnchorMenu: React.FC<{ anchors: IAnchor[] }> = observer(({ anchors 
     }, [])
 
     return (
-        <ul className={styles['anchors-list']}>
+        <ul className="w-80 py-10 px-5 overflow-auto border-l border-primary-color border-opacity-10">
             {anchors.map(({ id, title }) => (
-                <a
-                    key={id}
-                    href={id}
-                    onClick={(e) => {
-                        e.preventDefault()
-                        scrollToElement(id)
-                        navigate(`${location.pathname}#${id}`)
-                    }}>
-                    <li>
-                        <span className="italic text-right">{title}</span> <span>❖</span>
-                    </li>
-                </a>
+                <li>
+                    <a
+                        className="anchor-menu-link"
+                        key={id}
+                        href={id}
+                        onClick={(e) => {
+                            e.preventDefault()
+                            scrollToElement(id)
+                            navigate(`${location.pathname}#${id}`)
+                        }}>
+                        <span>{title}</span>❖
+                    </a>
+                </li>
             ))}
         </ul>
     )

@@ -1,5 +1,3 @@
-import styles from './Content.module.scss'
-
 export const Content: React.FC = ({ children }) => {
-    return <div className={styles['content']}>{children}</div>
+    return <div className="flex flex-col overflow-auto px-28 w-[1000px]">{children}</div>
 }

@@ -8,16 +8,17 @@ import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { useRootStore } from '../StoreProvider'
-import styles from './NavigationMenu.module.scss'
 
 export const NavigationMenu = () => {
     return (
-        <ul className={styles['navmenu']}>
+        <ul className="relative flex items-center justify-center px-4 py-2 gap-10 border-t border-primary-color border-opacity-30">
             <li>
                 <NavLink
                     className={(navData) => {
-                        return `${styles['navlink']} ${
-                            navData.isActive ? styles['active'] : ''
+                        return `nav-menu-link ${
+                            navData.isActive
+                                ? 'font-bold !text-primary-color border-b-4 border-primary-color'
+                                : ''
                         }`
                     }}
                     to="/">
@@ -27,8 +28,10 @@ export const NavigationMenu = () => {
             <li>
                 <NavLink
                     className={(navData) => {
-                        return `${styles['navlink']} ${
-                            navData.isActive ? styles['active'] : ''
+                        return `nav-menu-link ${
+                            navData.isActive
+                                ? 'font-bold !text-primary-color border-b-4 border-primary-color'
+                                : ''
                         }`
                     }}
                     to="/ubuntu">
@@ -38,8 +41,10 @@ export const NavigationMenu = () => {
             <li>
                 <NavLink
                     className={(navData) => {
-                        return `${styles['navlink']} ${
-                            navData.isActive ? styles['active'] : ''
+                        return `nav-menu-link ${
+                            navData.isActive
+                                ? 'font-bold !text-primary-color border-b-4 border-primary-color'
+                                : ''
                         }`
                     }}
                     to="/react">
@@ -49,8 +54,10 @@ export const NavigationMenu = () => {
             <li>
                 <NavLink
                     className={(navData) => {
-                        return `${styles['navlink']} ${
-                            navData.isActive ? styles['active'] : ''
+                        return `nav-menu-link ${
+                            navData.isActive
+                                ? 'font-bold !text-primary-color border-b-4 border-primary-color'
+                                : ''
                         }`
                     }}
                     to="/git">
@@ -61,8 +68,10 @@ export const NavigationMenu = () => {
             <li>
                 <NavLink
                     className={(navData) => {
-                        return `${styles['navlink']} ${
-                            navData.isActive ? styles['active'] : ''
+                        return `nav-menu-link ${
+                            navData.isActive
+                                ? 'font-bold !text-primary-color border-b-4 border-primary-color'
+                                : ''
                         }`
                     }}
                     to="/nodejs">
@@ -70,11 +79,50 @@ export const NavigationMenu = () => {
                     Node js
                 </NavLink>
             </li>
-
-            <ThemeMode />
+            <li className="absolute right-3 flex gap-5 justify-center items-center">
+                <PenColor />
+                <ThemeMode />
+            </li>
         </ul>
     )
 }
+
+const PenColor = observer(() => {
+    const { onChangeField, pen_color_menu } = useRootStore()
+    return (
+        <>
+            <span
+                className="h-7 w-7 rounded-full bg-primary-color shadow-2xl cursor-pointer hover:animate-pulse"
+                onClick={() => onChangeField('pen_color_menu', !pen_color_menu)}
+            />
+
+            <PenColorModal />
+        </>
+    )
+})
+
+const PenColorModal = observer(() => {
+    const { pen_color_menu, onChangePenColor } = useRootStore()
+
+    if (!pen_color_menu) return null
+
+    return (
+        <div className="absolute -left-2 bottom-14 w-10 flex flex-col gap-4 items-center justify-center">
+            <span
+                className="h-7 w-7 rounded-full bg-red-600 shadow-2xl cursor-pointer hover:animate-pulse"
+                onClick={() => onChangePenColor('red')}
+            />
+            <span
+                className="h-7 w-7 rounded-full bg-purple-600 shadow-2xl cursor-pointer hover:animate-pulse"
+                onClick={() => onChangePenColor('magic')}
+            />
+            <span
+                className="h-7 w-7 rounded-full bg-emerald-500 shadow-2xl cursor-pointer hover:animate-pulse"
+                onClick={() => onChangePenColor('emerald')}
+            />
+        </div>
+    )
+})
 
 const ThemeMode = observer(() => {
     const { dark_mode, onChangeField } = useRootStore()
@@ -88,8 +136,8 @@ const ThemeMode = observer(() => {
     }, [dark_mode])
 
     return (
-        <li
-            className="absolute right-3 flex items-center justify-center w-10 h-10 cursor-pointer rounded-full select-none"
+        <span
+            className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full select-none"
             onClick={() => {
                 onChangeField('dark_mode', !dark_mode)
                 localStorage.setItem('color-theme', JSON.stringify(!dark_mode))
@@ -103,6 +151,6 @@ const ThemeMode = observer(() => {
                     nights_stay
                 </span>
             )}
-        </li>
+        </span>
     )
 })

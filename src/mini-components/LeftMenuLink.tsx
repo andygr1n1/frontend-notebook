@@ -8,8 +8,8 @@ export const LeftMenuLink: React.FC<{ route: string; title: string }> = observer
             <li>
                 <NavLink
                     className={(navData) => {
-                        return `${styles['navlink']} ${
-                            navData.isActive ? styles['active'] : ''
+                        return `left-menu-link ${
+                            navData.isActive ? '!text-primary-color font-bold' : ''
                         }`
                     }}
                     to={route}>
