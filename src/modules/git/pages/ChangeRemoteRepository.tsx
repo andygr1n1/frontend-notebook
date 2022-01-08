@@ -15,7 +15,7 @@ export const ChangeRemoteRepository = () => {
             <p>
                 <Code
                     code={
-                        'git remote set-url origin git@your.git.repo.example.com:user/repository2.git'
+                        'git remote set-url --push origin git@github.com:andygr1n1/javascript-quests.git'
                     }
                 />
             </p>

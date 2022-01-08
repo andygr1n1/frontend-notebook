@@ -24,13 +24,16 @@
     }
 
     body {
-        @apply px-36 bg-gray-900;
+        /* @apply px-36 bg-gray-900; */
+        @apply flex items-center justify-center px-36;
+        background-color: #111827;
+        background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.35' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     #root {
-        @apply flex flex-col items-center gap-3 pt-3 h-full bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
+        @apply flex flex-col gap-3 pt-3 h-full w-[1666px] bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
     }
 
     #root.dark-theme {
@@ -93,7 +96,7 @@
     }
 
     .anchor-menu-link {
-        @apply flex gap-4 justify-end items-center p-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
+        @apply flex gap-4 justify-end items-center py-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
         hover:!text-primary-color hover:font-bold hover:opacity-100 hover:animate-pulse;
     }
 }
