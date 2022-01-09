@@ -1,17 +1,12 @@
-import { message } from 'antd'
+import { useRootStore } from '../StoreProvider'
 export const Code: React.FC<{ code: string }> = ({ code }) => {
+    const { onSuccessMessageModalOpen } = useRootStore()
     return (
-        <b>
-            <code
-                onClick={() => {
-                    navigator.clipboard.writeText(code)
-                    message.info({
-                        content: `Code copied: ${code}`,
-                        duration: 1,
-                    })
-                }}>
-                {` ${code} `}
-            </code>
-        </b>
+        <code
+            onClick={() => {
+                onSuccessMessageModalOpen(code)
+            }}>
+            {` ${code} `}
+        </code>
     )
 }

@@ -33,7 +33,7 @@
     }
 
     #root {
-        @apply flex flex-col gap-3 pt-3 h-full w-[1666px] bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
+        @apply relative flex flex-col gap-3 pt-3 h-full w-[1666px] bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
     }
 
     #root.dark-theme {
@@ -41,7 +41,7 @@
     }
 
     code {
-        @apply font-mono text-primary-color cursor-pointer text-base;
+        @apply font-mono text-primary-color cursor-pointer text-base font-bold;
     }
 
     h1 {
@@ -57,7 +57,8 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h3 {
         @apply font-bold font-serif select-none;
     }
 

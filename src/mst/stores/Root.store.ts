@@ -6,11 +6,9 @@ export const Root$ = types
         dark_mode: true,
         pen_color: 'emerald',
         pen_color_menu: false,
+        success_message_modal_is_open: false,
     })
     .actions((self) => ({
-        setCurrentLocation(newLocation: string): void {
-            self.current_location = newLocation
-        },
         onChangeField<Key extends keyof typeof self>(key: Key, value: typeof self[Key]) {
             self[key] = value
         },
@@ -32,6 +30,10 @@ export const Root$ = types
         },
     }))
     .actions((self) => ({
+        onSuccessMessageModalOpen(code: string): void {
+            navigator.clipboard.writeText(code)
+            self.success_message_modal_is_open = true
+        },
         onChangePenColor(new_color: string): void {
             console.log('new_color', typeof new_color, new_color)
             self.pen_color_menu = false

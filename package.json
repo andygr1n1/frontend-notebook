@@ -9,6 +9,9 @@
     },
     "dependencies": {
         "@ant-design/icons": "^4.7.0",
+        "@emotion/react": "^11.7.1",
+        "@emotion/styled": "^11.6.0",
+        "@mui/material": "^5.2.7",
         "antd": "^4.17.1",
         "mobx": "^6.3.10",
         "mobx-react-lite": "^3.2.3",
