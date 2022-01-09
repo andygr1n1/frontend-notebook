@@ -1,8 +1,8 @@
 import { IRoute } from '../helpers/types'
-import { ReactRouter6 } from '../modules/react/pages/ReactRouter6'
 import { v4 as uuid } from 'uuid'
 import { TerminalFutureTheme } from '../modules/ubuntu/pages/TerminalFutureTheme'
 import { ConverToIco } from '../modules/ubuntu/pages/ConvertToIco'
+import { AddFontFamily } from '../modules/ubuntu/pages/AddFontFamily'
 
 export const UbuntuRoutes: IRoute[] = [
     {
@@ -16,5 +16,11 @@ export const UbuntuRoutes: IRoute[] = [
         route: 'convert-to-ico',
         title: 'Convert to ico',
         component: <ConverToIco />,
+    },
+    {
+        id: uuid(),
+        route: 'add-font-family',
+        title: 'Add font family',
+        component: <AddFontFamily />,
     },
 ]
