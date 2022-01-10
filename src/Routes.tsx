@@ -13,6 +13,9 @@ import { NodeIndex } from './modules/nodejs/pages/NodeIndex'
 import { UbuntuRoutes } from './data-center/UbuntuRoutes'
 import { UbuntuNotes } from './modules/ubuntu/UbuntuNotes'
 import { UbuntuIndex } from './modules/ubuntu/pages/UbuntuIndex'
+import { JsNotes } from './modules/js/JsNotes'
+import { JsIndex } from './modules/js/pages/JsIndex'
+import { JsRoutes } from './data-center/JSRoutes'
 
 export const AppRoutes = () => {
     return (
@@ -29,6 +32,12 @@ export const AppRoutes = () => {
             <Route path="/ubuntu/*" element={<UbuntuNotes />}>
                 <Route path="" element={<UbuntuIndex />} />
                 {UbuntuRoutes.map((route) => (
+                    <Route key={route.id} path={route.route} element={route.component} />
+                ))}
+            </Route>
+            <Route path="/js/*" element={<JsNotes />}>
+                <Route path="" element={<JsIndex />} />
+                {JsRoutes.map((route) => (
                     <Route key={route.id} path={route.route} element={route.component} />
                 ))}
             </Route>

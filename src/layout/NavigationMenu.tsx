@@ -7,6 +7,7 @@ import {
 import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { PuzzleIcon } from '../assets/icons/PuzzleIcon'
 import { useRootStore } from '../StoreProvider'
 
 export const NavigationMenu = () => {
@@ -36,6 +37,19 @@ export const NavigationMenu = () => {
                     }}
                     to="/ubuntu">
                     <ThunderboltOutlined /> Ubuntu
+                </NavLink>
+            </li>
+            <li>
+                <NavLink
+                    className={(navData) => {
+                        return `nav-menu-link ${
+                            navData.isActive
+                                ? 'font-bold !text-primary-color border-b-4 border-primary-color'
+                                : ''
+                        }`
+                    }}
+                    to="/js">
+                    <PuzzleIcon className="w-4 h-4" /> Js
                 </NavLink>
             </li>
             <li>
