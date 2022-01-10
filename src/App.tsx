@@ -12,7 +12,8 @@ export const App = observer(() => {
         const getColorThemeFromLocalStorage: string | null =
             localStorage.getItem('color-theme')
 
-        console.log('getColorThemeFromLocalStorage', getColorThemeFromLocalStorage)
+        const getPenColorFromLocalStorage: string | null =
+            localStorage.getItem('pen_color')
 
         if (
             getColorThemeFromLocalStorage &&
@@ -20,10 +21,12 @@ export const App = observer(() => {
         ) {
             onChangeField('dark_mode', JSON.parse(getColorThemeFromLocalStorage))
         }
+        if (getPenColorFromLocalStorage) {
+            onChangeField('pen_color', JSON.parse(getPenColorFromLocalStorage))
+        }
     }, [])
 
     useEffect(() => {
-        console.log('useEffect of pen_color', pen_color)
         apply_primary_color(pen_color)
     }, [pen_color])
 
