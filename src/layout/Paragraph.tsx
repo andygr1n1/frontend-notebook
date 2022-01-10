@@ -1,3 +1,3 @@
 export const Paragraph: React.FC = ({ children }) => {
-    return <div className="font-22px cursor-default mb-40px">{children}</div>
+    return <div className="cursor-default mb-10">{children}</div>
 }

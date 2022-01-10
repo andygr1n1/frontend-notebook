@@ -1,8 +1,9 @@
+import { Content } from '../../../layout/Content'
 import { Code } from '../../../mini-components/Code'
 
 export const ChangeRemoteRepository = () => {
     return (
-        <>
+        <Content>
             <h1>Change a remote Git repository:</h1>
             <p>
                 To list the existing remotes we open the terminal and type in the
@@ -14,10 +15,10 @@ export const ChangeRemoteRepository = () => {
             <p>
                 <Code
                     code={
-                        'git remote set-url origin git@your.git.repo.example.com:user/repository2.git'
+                        'git remote set-url --push origin git@github.com:andygr1n1/javascript-quests.git'
                     }
                 />
             </p>
-        </>
+        </Content>
     )
 }

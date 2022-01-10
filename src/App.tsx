@@ -1,30 +1,54 @@
+import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { TopNavigationMenu } from './layout/TopNavigationMenu'
+import { apply_primary_color } from './helpers/apply_primary_color'
 import { AppRoutes } from './Routes'
 import { useRootStore } from './StoreProvider'
 
-export const App = () => {
+export const App = observer(() => {
+    const { onChangeField, pen_color } = useRootStore()
+
+    useEffect(() => {
+        const getColorThemeFromLocalStorage: string | null =
+            localStorage.getItem('color-theme')
+
+        const getPenColorFromLocalStorage: string | null =
+            localStorage.getItem('pen_color')
+
+        if (
+            getColorThemeFromLocalStorage &&
+            JSON.parse(getColorThemeFromLocalStorage) === false
+        ) {
+            onChangeField('dark_mode', JSON.parse(getColorThemeFromLocalStorage))
+        }
+        if (getPenColorFromLocalStorage) {
+            onChangeField('pen_color', JSON.parse(getPenColorFromLocalStorage))
+        }
+    }, [])
+
+    useEffect(() => {
+        apply_primary_color(pen_color)
+    }, [pen_color])
+
     return (
         <>
             <LocalStorageListener />
-            <TopNavigationMenu />
             <AppRoutes />
         </>
     )
-}
+})
 
 const LocalStorageListener = () => {
-    const { setCurrentLocation } = useRootStore()
+    const { onChangeField } = useRootStore()
     const navigate = useNavigate()
     const location = useLocation()
 
     useEffect(() => {
-        const savedLocation: string = JSON.parse(
-            localStorage.getItem('useLocation') || '',
-        )
+        const getLocalStorage: string | null = localStorage.getItem('useLocation')
+        let savedLocation = ''
+        if (getLocalStorage) savedLocation = JSON.parse(getLocalStorage)
 
-        setCurrentLocation(savedLocation)
+        onChangeField('current_location', savedLocation)
 
         savedLocation && navigate(savedLocation)
     }, [])

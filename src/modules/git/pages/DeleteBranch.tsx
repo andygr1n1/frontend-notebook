@@ -1,8 +1,9 @@
+import { Content } from '../../../layout/Content'
 import { Code } from '../../../mini-components/Code'
 
 export const DeleteBranch = () => {
     return (
-        <>
+        <Content>
             <h1>How to Delete a Git Branch</h1>
             <p>
                 <i>//delete branch locally:</i>{' '}
@@ -39,6 +40,6 @@ export const DeleteBranch = () => {
                 The <b>-p</b> flag means "prune". After fetching, branches which no longer
                 exist on the remote will be deleted.
             </p>
-        </>
+        </Content>
     )
 }

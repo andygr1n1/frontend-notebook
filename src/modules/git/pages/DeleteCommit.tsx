@@ -1,8 +1,9 @@
+import { Content } from '../../../layout/Content'
 import { Code } from '../../../mini-components/Code'
 
 export const DeleteCommit = () => {
     return (
-        <>
+        <Content>
             <h1>How to Delete a Commit</h1>
             <h2>Git Reset</h2>
             <p>
@@ -25,6 +26,6 @@ export const DeleteCommit = () => {
                 сохраните файл. Перебазирование выполнит rest работы, удалив только эту
                 фиксацию(коммит) и воспроизведя все остальные обратно в журнал.
             </p>
-        </>
+        </Content>
     )
 }

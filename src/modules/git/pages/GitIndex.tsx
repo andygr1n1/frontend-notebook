@@ -1,3 +1,4 @@
+import { Content } from '../../../layout/Content'
 import { EMPTY_PAGE_LOGO_ENUM } from '../../../helpers/enums'
 import { Code } from '../../../mini-components/Code'
 import { EmptyPageLogo } from '../../../mini-components/EmptyPageLogo'
@@ -5,7 +6,7 @@ import { EmptyPageLogo } from '../../../mini-components/EmptyPageLogo'
 export const GitIndex = () => {
     // return <EmptyPageLogo icon={EMPTY_PAGE_LOGO_ENUM.GIT} />
     return (
-        <>
+        <Content>
             <h1>
                 Git&nbsp;
                 <a href="https://git-scm.com/book/en/v2" target="_blank">
@@ -39,6 +40,6 @@ export const GitIndex = () => {
                     </a>
                 </button>
             </p>
-        </>
+        </Content>
     )
 }

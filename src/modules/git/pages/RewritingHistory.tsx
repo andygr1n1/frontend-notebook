@@ -1,8 +1,9 @@
+import { Content } from '../../../layout/Content'
 import { Code } from '../../../mini-components/Code'
 
 export const RewritingHistory = () => {
     return (
-        <>
+        <Content>
             <h1>Способы изменения истории коммитов:</h1>
             <h2>--amend</h2>
             <p>
@@ -25,6 +26,6 @@ export const RewritingHistory = () => {
             <p>
                 <Code code={'git rebase -i HEAD~3'} />
             </p>
-        </>
+        </Content>
     )
 }
