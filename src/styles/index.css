@@ -100,4 +100,7 @@
         @apply flex gap-4 justify-end items-center py-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
         hover:!text-primary-color hover:font-bold hover:opacity-100 hover:animate-pulse;
     }
+    .color-pen {
+        @apply h-7 w-7 rounded-full cursor-pointer;
+    }
 }

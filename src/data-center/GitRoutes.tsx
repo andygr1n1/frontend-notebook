@@ -1,4 +1,4 @@
-import { IRoute } from '../helpers/types'
+import type { IRoute } from '../helpers/types'
 import { ChangeBranchName } from '../modules/git/pages/ChangeBranchName'
 import { ChangeRemoteRepository } from '../modules/git/pages/ChangeRemoteRepository'
 import { CleanUpRemoteBranch } from '../modules/git/pages/CleanUpRemoteBranch'

@@ -10,6 +10,7 @@ export const Root$ = types
             PEN_COLOR.EMERALD,
         ),
         pen_color_menu: false,
+        app_routes_menu: false,
         success_message_modal_is_open: false,
     })
     .actions((self) => ({
@@ -39,12 +40,7 @@ export const Root$ = types
             self.success_message_modal_is_open = true
         },
         onChangePenColor(new_color: PEN_COLOR): void {
-            console.log('new_color', typeof new_color, new_color)
             self.pen_color_menu = false
-
-            if (self.pen_color === new_color) {
-                return
-            }
             localStorage.setItem('pen_color', JSON.stringify(`${new_color}`))
             self.pen_color = new_color
         },

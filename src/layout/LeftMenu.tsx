@@ -1,4 +1,4 @@
-import { IRoute } from '../helpers/types'
+import type { IRoute } from '../helpers/types'
 import { LeftMenuLink } from '../mini-components/LeftMenuLink'
 
 export const LeftMenu: React.FC<{ routes: IRoute[] }> = ({ routes }) => {

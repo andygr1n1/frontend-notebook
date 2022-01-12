@@ -1,4 +1,4 @@
-import { IRoute } from '../helpers/types'
+import type { IRoute } from '../helpers/types'
 import { v4 as uuid } from 'uuid'
 import { JsSkillUp } from '../modules/js/pages/JsSkillUp'
 

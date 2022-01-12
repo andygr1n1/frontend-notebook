@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom'
-import { IRoute } from '../helpers/types'
+import type { IRoute } from '../helpers/types'
 import { MessageModal } from '../mini-components/MessageModal'
 import { LeftMenu } from './LeftMenu'
-import { NavigationMenu } from './NavigationMenu'
+import { ControlPanel } from './ControlPanel'
 
 export const Module: React.FC<{ routes: IRoute[] }> = ({ routes }) => {
     return (
@@ -12,7 +12,7 @@ export const Module: React.FC<{ routes: IRoute[] }> = ({ routes }) => {
                 <Outlet />
                 <MessageModal />
             </div>
-            <NavigationMenu />
+            <ControlPanel />
         </>
     )
 }

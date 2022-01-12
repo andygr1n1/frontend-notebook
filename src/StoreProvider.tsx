@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import { IRoot$ } from './mst/types'
+import type { IRoot$ } from './mst/types'
 import { Root$ } from './mst/stores/Root.store'
 
 const storeContext = createContext<IRoot$ | null>(null)

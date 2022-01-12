@@ -1,4 +1,4 @@
-import { PEN_COLOR } from './enums'
+import type { PEN_COLOR } from './enums'
 
 /**
  * Apply primary theme to root

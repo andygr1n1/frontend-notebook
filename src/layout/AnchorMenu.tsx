@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import { IAnchor } from '../helpers/types'
+import type { IAnchor } from '../helpers/types'
 import { useEffect } from 'react'
 import { useRootStore } from '../StoreProvider'
 import { useLocation, useNavigate } from 'react-router-dom'
