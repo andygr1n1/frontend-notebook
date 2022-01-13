@@ -8,7 +8,7 @@ export const PenColor = observer(() => {
     return (
         <>
             <span
-                className="color-pen bg-primary-color shadow-primary-color shadow-md"
+                className="color-pen bg-primary-color"
                 onClick={() => onChangeField('pen_color_menu', !pen_color_menu)}
             />
             {pen_color_menu && <PenColorMenu />}

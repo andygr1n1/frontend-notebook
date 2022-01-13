@@ -4,6 +4,7 @@ import { fadeIn } from 'react-animations'
 import { PEN_COLOR } from '../../helpers/enums'
 import { useRootStore } from '../../StoreProvider'
 import { useEffect } from 'react'
+import { ZoomInAnimation } from '../../assets/animation/ZoomInAnimation'
 const fadeInAnimation = keyframes`${fadeIn}`
 
 const StyledMenu = styled.div`
@@ -28,7 +29,9 @@ export const PenColorMenu = observer(() => {
     }, [])
 
     return (
-        <StyledMenu className="absolute -left-2 bottom-14 w-10 flex flex-col gap-4 items-center justify-center">
+        <ZoomInAnimation
+            animate={true}
+            className="absolute -left-2 bottom-14 w-10 flex flex-col gap-4 items-center justify-center">
             {penColors
                 .filter((color) => color !== pen_color)
                 .map((color) => (
@@ -39,6 +42,6 @@ export const PenColorMenu = observer(() => {
                         onClick={() => onChangePenColor(color)}
                     />
                 ))}
-        </StyledMenu>
+        </ZoomInAnimation>
     )
 })
