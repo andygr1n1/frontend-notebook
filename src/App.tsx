@@ -8,7 +8,11 @@ import { AppRoutes } from './Routes'
 import { useRootStore } from './StoreProvider'
 
 export const App = observer(() => {
-    const { onChangeField, pen_color } = useRootStore()
+    const {
+        onChangeField,
+        pen_color,
+        catalogs$: { fetchCalatogs },
+    } = useRootStore()
 
     useEffect(() => {
         const getColorThemeFromLocalStorage: string | null =
@@ -26,6 +30,8 @@ export const App = observer(() => {
         if (getPenColorFromLocalStorage) {
             onChangeField('pen_color', JSON.parse(getPenColorFromLocalStorage))
         }
+
+        fetchCalatogs()
     }, [])
 
     useEffect(() => {

@@ -2,7 +2,7 @@ import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
 import { useRootStore } from '../../../StoreProvider'
 
-const ThemeMode = observer(() => {
+export const ThemeMode = observer(() => {
     const { dark_mode, onChangeField } = useRootStore()
 
     useEffect(() => {
@@ -31,5 +31,3 @@ const ThemeMode = observer(() => {
         </span>
     )
 })
-
-export default ThemeMode

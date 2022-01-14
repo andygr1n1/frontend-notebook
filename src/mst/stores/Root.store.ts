@@ -1,5 +1,7 @@
 import { types } from 'mobx-state-tree'
+
 import { PEN_COLOR } from '../../helpers/enums'
+import { Catalogs$ } from './Catalogs.store'
 
 export const Root$ = types
     .model('Root$', {
@@ -12,11 +14,13 @@ export const Root$ = types
         pen_color_menu: false,
         app_routes_menu: false,
         success_message_modal_is_open: false,
+        catalogs$: types.optional(Catalogs$, {}),
     })
     .actions((self) => ({
         onChangeField<Key extends keyof typeof self>(key: Key, value: typeof self[Key]) {
             self[key] = value
         },
+
         scrollToElement(id?: string) {
             const elementId = id ? id : self.current_location.split('#')[1]
             if (elementId) {

@@ -4,14 +4,34 @@ import {
     ThunderboltOutlined,
     ApiOutlined,
 } from '@ant-design/icons'
+import { PuzzleIcon } from '../../../assets/icons/PuzzleIcon'
 import { observer } from 'mobx-react-lite'
 import { NavLink } from 'react-router-dom'
-import { PuzzleIcon } from '../../../assets/icons/PuzzleIcon'
+
+import { useRootStore } from '../../../StoreProvider'
 
 export const NavigationMenuList = observer(() => {
+    const {
+        catalogs$: { navMenuCatalogs },
+    } = useRootStore()
     return (
         <ul className="flex w-full items-center gap-10 ">
-            <li>
+            {navMenuCatalogs.map(({ id, route, title }) => (
+                <li key={id}>
+                    <NavLink
+                        className={(navData) => {
+                            return `nav-menu-link ${
+                                navData.isActive
+                                    ? 'font-bold !text-primary-color border-b-4 border-primary-color'
+                                    : ''
+                            }`
+                        }}
+                        to={route}>
+                        {title}
+                    </NavLink>
+                </li>
+            ))}
+            {/* <li>
                 <NavLink
                     className={(navData) => {
                         return `nav-menu-link ${
@@ -33,7 +53,7 @@ export const NavigationMenuList = observer(() => {
                                 : ''
                         }`
                     }}
-                    to="/ubuntu">
+                    to="/linux">
                     <ThunderboltOutlined /> Ubuntu
                 </NavLink>
             </li>
@@ -90,7 +110,7 @@ export const NavigationMenuList = observer(() => {
                     <ApiOutlined />
                     Node js
                 </NavLink>
-            </li>
+            </li> */}
         </ul>
     )
 })

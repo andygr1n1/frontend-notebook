@@ -96,6 +96,13 @@
         @apply flex items-center justify-center gap-3 w-28 px-2 py-1 transition-all ease-in-out select-none hover:text-primary-color hover:animate-pulse hover:font-bold;
     }
 
+    .catalog-menu-item {
+        @apply flex items-center bg-opacity-10 justify-center border-2 rounded-xl border-primary-color w-20 h-20 
+               transition-all ease-in-out select-none
+             !text-white bg-primary-color 
+               hover:animate-pulse hover:font-bold;
+    }
+
     .anchor-menu-link {
         @apply flex gap-4 justify-end items-center py-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
         hover:!text-primary-color hover:font-bold hover:opacity-100 hover:animate-pulse;
@@ -104,3 +111,5 @@
         @apply h-7 w-7 rounded-full cursor-pointer;
     }
 }
+
+/* border rounded-xl border-primary-color */

@@ -7,8 +7,9 @@ import { useRootStore } from '../../../StoreProvider'
 import { observer } from 'mobx-react-lite'
 import { RotateAnimation } from '../../../assets/animation'
 import { ZoomInAnimationContainer } from '../../../assets/animation/ZoomIn.animation'
+import { NavLink } from 'react-router-dom'
 
-export const RoutesMenu = observer(() => {
+export const CatalogMenu = observer(() => {
     const { onChangeField, app_routes_menu } = useRootStore()
 
     const debouncedClickHandler = useMemo(
@@ -33,17 +34,40 @@ export const RoutesMenu = observer(() => {
 })
 
 export const RoutesModal = () => {
-    const { app_routes_menu, onChangeField } = useRootStore()
+    const {
+        app_routes_menu,
+        onChangeField,
+        catalogs$: { catalog$ },
+    } = useRootStore()
+
+    const closeRoutesModal = () => onChangeField('app_routes_menu', false)
 
     return (
         <ZoomInAnimationContainer
             visibility={app_routes_menu}
-            onClose={() => onChangeField('app_routes_menu', false)}
-            className="routes-menu-modal absolute bottom-16 -right-1 h-[600px] w-[1000px] p-4 rounded-md border
+            onClose={closeRoutesModal}
+            className="routes-menu-modal  absolute bottom-16 -right-1 h-[600px] w-[1000px] p-8 rounded-md border
          text-gray-600 border-gray-200 bg-white shadow-2xl">
-            <button id="sexy-button">
-                <div className="h-40 bg-red-400"> R O U T E S MODAL</div>
-            </button>
+            <ul className="flex gap-5 flex-wrap w-full">
+                {catalog$.map(({ id, title, route }) => (
+                    <li
+                        key={id}
+                        className="flex h-[fit-content]"
+                        onClick={closeRoutesModal}>
+                        <NavLink
+                            className={(navData) => {
+                                return `catalog-menu-item ${
+                                    navData.isActive
+                                        ? 'font-bold group bg-opacity-100 shadow-primary-color shadow-2xl scale-110'
+                                        : ''
+                                }`
+                            }}
+                            to={route}>
+                            {title}
+                        </NavLink>
+                    </li>
+                ))}
+            </ul>
         </ZoomInAnimationContainer>
     )
 }

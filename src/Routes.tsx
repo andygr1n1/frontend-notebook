@@ -16,6 +16,9 @@ import { UbuntuIndex } from './modules/ubuntu/pages/UbuntuIndex'
 import { JsNotes } from './modules/js/JsNotes'
 import { JsIndex } from './modules/js/pages/JsIndex'
 import { JsRoutes } from './data-center/JSRoutes'
+import { CssRoutes } from './data-center/CssRoutes'
+import { CssNotes } from './modules/css/CssNotes'
+import { CssIndex } from './modules/css/pages/CssIndex'
 
 export const AppRoutes = () => {
     return (
@@ -29,7 +32,7 @@ export const AppRoutes = () => {
                     <Route key={route.id} path={route.route} element={route.component} />
                 ))}
             </Route>
-            <Route path="/ubuntu/*" element={<UbuntuNotes />}>
+            <Route path="/linux/*" element={<UbuntuNotes />}>
                 <Route path="" element={<UbuntuIndex />} />
                 {UbuntuRoutes.map((route) => (
                     <Route key={route.id} path={route.route} element={route.component} />
@@ -50,6 +53,12 @@ export const AppRoutes = () => {
             <Route path="/nodejs/*" element={<NodejsNotes />}>
                 <Route path="" element={<NodeIndex />} />
                 {NodejsRoutes.map((route) => (
+                    <Route key={route.id} path={route.route} element={route.component} />
+                ))}
+            </Route>
+            <Route path="/css/*" element={<CssNotes />}>
+                <Route path="" element={<CssIndex />} />
+                {CssRoutes.map((route) => (
                     <Route key={route.id} path={route.route} element={route.component} />
                 ))}
             </Route>
