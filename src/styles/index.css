@@ -33,7 +33,7 @@
     }
 
     #root {
-        @apply relative flex flex-col gap-3 pt-3 h-full w-[1640px] bg-white font-sans text-base text-gray-600 selection:bg-primary-color;
+        @apply relative flex flex-col gap-3 pt-3 h-full w-[1640px] bg-white font-sans text-base text-gray-600 selection:bg-primary-color animate-fade-in-down;
     }
 
     #root.dark-theme {

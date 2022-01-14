@@ -5,7 +5,7 @@ import { NavigationMenuList } from './NavigationMenuList'
 import React from 'react'
 import { RoutesMenu } from './RoutesMenu'
 
-export const NavigationMenu = observer(() => {
+const NavigationMenu = observer(() => {
     return (
         <div className="flex relative items-center justify-between w-[1000px]">
             <NavigationMenuList />
@@ -13,3 +13,5 @@ export const NavigationMenu = observer(() => {
         </div>
     )
 })
+
+export default NavigationMenu

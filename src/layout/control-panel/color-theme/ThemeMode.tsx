@@ -1,20 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
-import { PenColor } from '../mini-components/pen-color/PenColor'
-import { useRootStore } from '../StoreProvider'
-import { NavigationMenu } from '../components/navigation-menu/NavigationMenu'
-
-export const ControlPanel = () => {
-    return (
-        <div className="relative flex w-full h-14 items-center justify-center px-4 gap-10 border-t border-primary-color border-opacity-30">
-            <NavigationMenu />
-            <div className="absolute right-3 flex gap-5 justify-center items-center">
-                <PenColor />
-                <ThemeMode />
-            </div>
-        </div>
-    )
-}
+import { useRootStore } from '../../../StoreProvider'
 
 const ThemeMode = observer(() => {
     const { dark_mode, onChangeField } = useRootStore()
@@ -45,3 +31,5 @@ const ThemeMode = observer(() => {
         </span>
     )
 })
+
+export default ThemeMode

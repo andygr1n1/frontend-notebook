@@ -4,10 +4,11 @@ import {
     ThunderboltOutlined,
     ApiOutlined,
 } from '@ant-design/icons'
+import { observer } from 'mobx-react-lite'
 import { NavLink } from 'react-router-dom'
-import { PuzzleIcon } from '../../assets/icons/PuzzleIcon'
+import { PuzzleIcon } from '../../../assets/icons/PuzzleIcon'
 
-export const NavigationMenuList = () => {
+export const NavigationMenuList = observer(() => {
     return (
         <ul className="flex w-full items-center gap-10 ">
             <li>
@@ -92,4 +93,4 @@ export const NavigationMenuList = () => {
             </li>
         </ul>
     )
-}
+})
