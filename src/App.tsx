@@ -2,6 +2,8 @@ import { observer } from 'mobx-react-lite'
 import { useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { apply_primary_color } from './helpers/apply_primary_color'
+import { ControlPanel } from './layout/ControlPanel'
+import { MessageModal } from './mini-components/MessageModal'
 import { AppRoutes } from './Routes'
 import { useRootStore } from './StoreProvider'
 
@@ -34,6 +36,8 @@ export const App = observer(() => {
         <>
             <LocalStorageListener />
             <AppRoutes />
+            <ControlPanel />
+            <MessageModal />
         </>
     )
 })

@@ -9,7 +9,7 @@ import { PuzzleIcon } from '../../assets/icons/PuzzleIcon'
 
 export const NavigationMenuList = () => {
     return (
-        <ul className="flex w-full items-center justify-center px-4 py-2 gap-10">
+        <ul className="flex w-full items-center gap-10 ">
             <li>
                 <NavLink
                     className={(navData) => {

@@ -7,7 +7,7 @@ import { RoutesMenu } from './RoutesMenu'
 
 export const NavigationMenu = observer(() => {
     return (
-        <div className="flex relative items-center justify-between gap-2 w-[1000px]">
+        <div className="flex relative items-center justify-between w-[1000px]">
             <NavigationMenuList />
             <RoutesMenu />
         </div>
