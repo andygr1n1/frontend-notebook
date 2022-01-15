@@ -42,7 +42,7 @@ export const RoutesModal = () => {
 
     const closeRoutesModal = () => onChangeField('app_routes_menu', false)
 
-    return (
+    return app_routes_menu ? (
         <ZoomInAnimationContainer
             visibility={app_routes_menu}
             onClose={closeRoutesModal}
@@ -69,5 +69,5 @@ export const RoutesModal = () => {
                 ))}
             </ul>
         </ZoomInAnimationContainer>
-    )
+    ) : null
 }
