@@ -8,6 +8,7 @@ import { observer } from 'mobx-react-lite'
 import { RotateAnimation } from '../../../assets/animation'
 import { ZoomInAnimationContainer } from '../../../assets/animation/ZoomIn.animation'
 import { NavLink } from 'react-router-dom'
+import { PingAnimationOnExit } from '../../../assets/animation/PingAnimationOnExit'
 
 export const CatalogMenu = observer(() => {
     const { onChangeField, app_routes_menu } = useRootStore()
@@ -50,21 +51,20 @@ export const RoutesModal = () => {
          text-gray-600 border-gray-200 bg-white shadow-2xl">
             <ul className="flex gap-5 flex-wrap w-full">
                 {catalog$.map(({ id, title, route }) => (
-                    <li
-                        key={id}
-                        className="flex h-[fit-content]"
-                        onClick={closeRoutesModal}>
-                        <NavLink
-                            className={(navData) => {
-                                return `catalog-menu-item ${
-                                    navData.isActive
-                                        ? 'font-bold group bg-opacity-100 shadow-primary-color shadow-2xl scale-110'
-                                        : ''
-                                }`
-                            }}
-                            to={route}>
-                            {title}
-                        </NavLink>
+                    <li key={id} className="flex h-[fit-content]">
+                        <PingAnimationOnExit action={() => closeRoutesModal()}>
+                            <NavLink
+                                className={(navData) => {
+                                    return `catalog-menu-item ${
+                                        navData.isActive
+                                            ? 'font-bold group bg-opacity-100 shadow-primary-color shadow-2xl scale-110'
+                                            : ''
+                                    }`
+                                }}
+                                to={route}>
+                                {title}
+                            </NavLink>
+                        </PingAnimationOnExit>
                     </li>
                 ))}
             </ul>
