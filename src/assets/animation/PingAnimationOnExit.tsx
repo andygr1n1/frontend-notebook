@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const PingAnimationOnExit: React.FC<{ action: () => void }> = ({
+export const PingAnimationOnExit: React.FC<{ action?: () => void }> = ({
     action,
     children,
 }) => {
@@ -8,12 +8,14 @@ export const PingAnimationOnExit: React.FC<{ action: () => void }> = ({
     return (
         <div
             onClick={() => {
-                setAnimator(true)
-                const timeout = setTimeout(() => {
-                    action()
-                    setAnimator(false)
-                    clearTimeout(timeout)
-                }, 400)
+                if (action) {
+                    setAnimator(true)
+                    const timeout = setTimeout(() => {
+                        action()
+                        setAnimator(false)
+                        clearTimeout(timeout)
+                    }, 400)
+                }
             }}
             className={`${animator && 'animate-ping'}`}>
             {children}

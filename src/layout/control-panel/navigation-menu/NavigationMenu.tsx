@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import { NavigationMenuList } from './NavigationMenuList'
 
 import React from 'react'
-import { CatalogMenu } from './CatalogMenu'
+import { CatalogMenu } from './catalog-menu/CatalogMenu'
 
 export const NavigationMenu = observer(() => {
     return (
