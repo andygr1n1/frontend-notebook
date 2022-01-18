@@ -17,23 +17,33 @@ export const ZoomInAnimationContainer: React.FC<{
     const animationRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
-        const AnimationClickEventListener = (event: MouseEvent) => {
+        function AnimationClickEventListener(event: MouseEvent) {
             const target = event.target as HTMLElement
             const animationHtmlElement = animationRef?.current
-
-
             if (!target || !animationHtmlElement) return
+            if (
+                target.closest(`.${animationRef?.current?.classList[0]}`) !==
+                animationHtmlElement
+            ) {
+                onClose?.()
+            }
+        }
 
-            if (target !== animationHtmlElement) {
-                if (target.offsetParent !== animationHtmlElement) {
-                    onClose?.()
-                }
+        function EscButtonEventListener(event: KeyboardEvent) {
+            console.log('keyboardEvent', event.key)
+            if (event.key === 'Escape') {
+                onClose?.()
             }
         }
 
         window.addEventListener('click', AnimationClickEventListener)
+        window.addEventListener('keydown', EscButtonEventListener)
 
-        return () => window.removeEventListener('click', AnimationClickEventListener)
+        return () => {
+            console.log('exit from ZoomInAnimationContainer ')
+            window.removeEventListener('click', AnimationClickEventListener)
+            window.removeEventListener('keydown', EscButtonEventListener)
+        }
     }, [])
 
     return visibility ? (
