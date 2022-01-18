@@ -1,0 +1,29 @@
+import { useEffect } from 'react'
+import { observer } from 'mobx-react-lite'
+import { useRootStore } from '../../../StoreProvider'
+import { PEN_COLOR } from '../../../helpers/enums'
+import { ZoomInAnimationContainer } from '../../../assets/animation/ZoomIn.animation'
+
+const penColors: PEN_COLOR[] = Object.values(PEN_COLOR)
+
+export const PenColorMenu = observer(() => {
+    const { onChangePenColor, pen_color, onChangeField, pen_color_menu } = useRootStore()
+
+    return pen_color_menu ? (
+        <ZoomInAnimationContainer
+            visibility={pen_color_menu}
+            className="absolute -left-2 bottom-14 w-10 flex flex-col gap-4 items-center justify-center"
+            onClose={() => onChangeField('pen_color_menu', false)}>
+            {penColors
+                .filter((color) => color !== pen_color)
+                .map((color) => (
+                    <span
+                        key={color}
+                        className="color-pen"
+                        style={{ background: color }}
+                        onClick={() => onChangePenColor(color)}
+                    />
+                ))}
+        </ZoomInAnimationContainer>
+    ) : null
+})
