@@ -11,8 +11,8 @@ export const PingAnimationOnExit: React.FC<{ action?: () => void }> = ({
                 if (action) {
                     setAnimator(true)
                     const timeout = setTimeout(() => {
-                        action()
                         setAnimator(false)
+                        action()
                         clearTimeout(timeout)
                     }, 400)
                 }

@@ -10,7 +10,7 @@ export const CatalogMenuList = observer(() => {
     return (
         <ul className="flex gap-5 flex-wrap w-full ">
             {all_catalogs$.map((catalog) => (
-                <CatalogMenuItem catalog={catalog}></CatalogMenuItem>
+                <CatalogMenuItem key={catalog.id} catalog={catalog}></CatalogMenuItem>
             ))}
         </ul>
     )

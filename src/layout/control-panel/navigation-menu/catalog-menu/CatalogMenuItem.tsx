@@ -11,7 +11,8 @@ export const CatalogMenuItem: React.FC<{ catalog: ICatalog }> = observer(
             catalogs$: { in_edit_mode },
         } = useRootStore()
 
-        const { id, title, route, checked, toggleCheckCatalog } = catalog
+        const { id, title, route, active_sub_route, checked, toggleCheckCatalog } =
+            catalog
 
         const closeRoutesModal = () => onChangeField('app_routes_menu', false)
 
@@ -30,7 +31,7 @@ export const CatalogMenuItem: React.FC<{ catalog: ICatalog }> = observer(
                                         : ''
                                 }`
                             }}
-                            to={route}>
+                            to={`/${route}/${active_sub_route()}`}>
                             {title}
                         </NavLink>
                     </button>

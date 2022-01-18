@@ -24,6 +24,7 @@ export const Catalogs$ = types
     }))
     .actions((self) => ({
         fetchCalatogs() {
+            if (self.all_catalogs$.length === frontend_catalog$.length) return
             try {
                 applySnapshot(self.all_catalogs$, frontend_catalog$)
             } catch (e) {

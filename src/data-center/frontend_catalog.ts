@@ -4,43 +4,43 @@ import type { ICatalogSnapshotIn } from '../mst/types'
 export const frontend_catalog$: ICatalogSnapshotIn[] = [
     {
         id: uuid(),
-        route: '/',
+        route: '',
         title: 'Search',
         checked: true,
     },
     {
         id: uuid(),
-        route: '/linux',
+        route: 'linux',
         title: 'Linux',
         checked: true,
     },
     {
         id: uuid(),
-        route: '/git',
+        route: 'git',
         title: 'Git',
         checked: true,
     },
     {
         id: uuid(),
-        route: '/js',
+        route: 'js',
         title: 'Js',
         checked: true,
     },
     {
         id: uuid(),
-        route: '/react',
+        route: 'react',
         title: 'React',
         checked: true,
     },
     {
         id: uuid(),
-        route: '/nodejs',
+        route: 'nodejs',
         title: 'Nodejs',
         checked: true,
     },
     {
         id: uuid(),
-        route: '/css',
+        route: 'css',
         title: 'Css',
     },
 ]

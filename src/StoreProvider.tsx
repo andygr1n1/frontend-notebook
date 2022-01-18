@@ -1,12 +1,14 @@
 import { createContext, useContext } from 'react'
 import type { IRoot$ } from './mst/types'
 import { Root$ } from './mst/stores/Root.store'
-
+import { initialize_local_forage } from './functions/indexdb_manager'
 const storeContext = createContext<IRoot$ | null>(null)
 
 const generateRoot$ = () => Root$.create()
 
 const rootStore$ = generateRoot$()
+
+initialize_local_forage(rootStore$)
 
 export const StoreProvider: React.FC = ({ children }) => {
     return <storeContext.Provider value={rootStore$}>{children}</storeContext.Provider>

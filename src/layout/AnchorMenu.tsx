@@ -11,7 +11,9 @@ export const AnchorMenu: React.FC<{ anchors: IAnchor[] }> = observer(({ anchors 
     const navigate = useNavigate()
 
     useEffect(() => {
-        scrollToElement()
+        setTimeout(() => {
+            scrollToElement()
+        }, 10)
     }, [])
 
     return (
