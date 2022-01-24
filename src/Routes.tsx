@@ -5,61 +5,91 @@ import { ReactNotes } from './modules/react/ReactNotes'
 import { GitIndex } from './modules/git/pages/GitIndex'
 import { HomeIndex } from './modules/home/pages/HomeIndex'
 import { ReactIndex } from './modules/react/pages/ReactIndex'
-import { GitRoutes } from './data-center/GitRoutes'
-import { ReactRoutes } from './data-center/ReactRoutes'
-import { NodejsRoutes } from './data-center/NodejsRoutes'
+import { GitRoutesComponents } from './routes-components/GitRoutesComponents'
 import { NodejsNotes } from './modules/nodejs/NodejsNotes'
 import { NodeIndex } from './modules/nodejs/pages/NodeIndex'
-import { UbuntuRoutes } from './data-center/UbuntuRoutes'
-import { UbuntuNotes } from './modules/ubuntu/UbuntuNotes'
-import { UbuntuIndex } from './modules/ubuntu/pages/UbuntuIndex'
+import { LinuxNotes } from './modules/linux/LinuxNotes'
+import { LinuxIndex } from './modules/linux/pages/LinuxIndex'
 import { JsNotes } from './modules/js/JsNotes'
 import { JsIndex } from './modules/js/pages/JsIndex'
-import { JsRoutes } from './data-center/JSRoutes'
-import { CssRoutes } from './data-center/CssRoutes'
 import { CssNotes } from './modules/css/CssNotes'
 import { CssIndex } from './modules/css/pages/CssIndex'
+import { useRootStore } from './StoreProvider'
+import { JsRoutesComponents } from './routes-components/JsRoutesComponents'
+import { CssRoutesComponents } from './routes-components/CssRoutesComponents'
+import { CATALOG_ROUTE } from './helpers/enums'
+import { LinuxRoutesComponents } from './routes-components/LinuxRoutesComponents'
+import { ReactRoutesComponents } from './routes-components/ReactRoutesComponents'
+import { NodejsRoutesComponents } from './routes-components/NodejsRoutesComponents'
 
 export const AppRoutes = () => {
+    const {
+        catalogs$: { getCatalog },
+    } = useRootStore()
+
     return (
         <Routes>
             <Route path="/*" element={<Home />}>
                 <Route path="" element={<HomeIndex />} />
             </Route>
-            <Route path="/git/*" element={<GitNotes />}>
+            <Route path={`/${CATALOG_ROUTE.GIT}/*`} element={<GitNotes />}>
                 <Route path="" element={<GitIndex />} />
-                {GitRoutes.map((route) => (
-                    <Route key={route.id} path={route.route} element={route.component} />
+                {getCatalog(CATALOG_ROUTE.GIT)?.sub_routes.map(({ sub_route: route, id }) => (
+                    <Route
+                        key={id}
+                        path={route}
+                        element={<GitRoutesComponents route={route} />}
+                    />
                 ))}
             </Route>
-            <Route path="/linux/*" element={<UbuntuNotes />}>
-                <Route path="" element={<UbuntuIndex />} />
-                {UbuntuRoutes.map((route) => (
-                    <Route key={route.id} path={route.route} element={route.component} />
+            <Route path={`/${CATALOG_ROUTE.LINUX}/*`} element={<LinuxNotes />}>
+                <Route path="" element={<LinuxIndex />} />
+                {getCatalog(CATALOG_ROUTE.LINUX)?.sub_routes.map(({ id, sub_route: route }) => (
+                    <Route
+                        key={id}
+                        path={route}
+                        element={<LinuxRoutesComponents route={route} />}
+                    />
                 ))}
             </Route>
-            <Route path="/js/*" element={<JsNotes />}>
+            <Route path={`/${CATALOG_ROUTE.JS}/*`} element={<JsNotes />}>
                 <Route path="" element={<JsIndex />} />
-                {JsRoutes.map((route) => (
-                    <Route key={route.id} path={route.route} element={route.component} />
+                {getCatalog(CATALOG_ROUTE.JS)?.sub_routes.map(({ id, sub_route: route }) => (
+                    <Route
+                        key={id}
+                        path={route}
+                        element={<JsRoutesComponents route={route} />}
+                    />
                 ))}
             </Route>
-            <Route path="/react/*" element={<ReactNotes />}>
+            <Route path={`/${CATALOG_ROUTE.REACT}/*`} element={<ReactNotes />}>
                 <Route path="" element={<ReactIndex />} />
-                {ReactRoutes.map((route) => (
-                    <Route key={route.id} path={route.route} element={route.component} />
+                {getCatalog(CATALOG_ROUTE.REACT)?.sub_routes.map(({ id, sub_route: route }) => (
+                    <Route
+                        key={id}
+                        path={route}
+                        element={<ReactRoutesComponents route={route} />}
+                    />
                 ))}
             </Route>
-            <Route path="/nodejs/*" element={<NodejsNotes />}>
+            <Route path={`/${CATALOG_ROUTE.NODEJS}/*`} element={<NodejsNotes />}>
                 <Route path="" element={<NodeIndex />} />
-                {NodejsRoutes.map((route) => (
-                    <Route key={route.id} path={route.route} element={route.component} />
+                {getCatalog(CATALOG_ROUTE.NODEJS)?.sub_routes.map(({ id, sub_route: route }) => (
+                    <Route
+                        key={id}
+                        path={route}
+                        element={<NodejsRoutesComponents route={route} />}
+                    />
                 ))}
             </Route>
-            <Route path="/css/*" element={<CssNotes />}>
+            <Route path={`/${CATALOG_ROUTE.CSS}/*`} element={<CssNotes />}>
                 <Route path="" element={<CssIndex />} />
-                {CssRoutes.map((route) => (
-                    <Route key={route.id} path={route.route} element={route.component} />
+                {getCatalog(CATALOG_ROUTE.CSS)?.sub_routes.map(({ id, sub_route: route }) => (
+                    <Route
+                        key={id}
+                        path={route}
+                        element={<CssRoutesComponents route={route} />}
+                    />
                 ))}
             </Route>
         </Routes>

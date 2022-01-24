@@ -1,6 +1,11 @@
 import { Module } from '../../layout/Module'
-import { NodejsRoutes } from '../../data-center/NodejsRoutes'
+import { useRootStore } from '../../StoreProvider'
+import { observer } from 'mobx-react-lite'
 
-export const NodejsNotes = () => {
-    return <Module routes={NodejsRoutes} />
-}
+export const NodejsNotes = observer(() => {
+    const {
+        catalogs$: { catalogSubRoutes: CatalogSubRoutes },
+    } = useRootStore()
+
+    return <Module routes={CatalogSubRoutes} />
+})

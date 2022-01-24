@@ -4,8 +4,8 @@ import { useRootStore } from '../../StoreProvider'
 
 export const GitNotes = observer(() => {
     const {
-        catalogs$: { gitCatalogRoutes },
+        catalogs$: { GitCatalogSubRoutes },
     } = useRootStore()
 
-    return <Module routes={gitCatalogRoutes} />
+    return <Module routes={GitCatalogSubRoutes} />
 })

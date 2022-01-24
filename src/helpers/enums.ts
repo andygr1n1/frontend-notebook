@@ -10,3 +10,13 @@ export enum PEN_COLOR {
     RED = '#ef4444',
     INDIGO = '#2563eb',
 }
+
+export enum CATALOG_ROUTE {
+    LINUX = 'linux',
+    GIT = 'git',
+    JS = 'js',
+    CSS = 'css',
+    REACT = 'react',
+    NODEJS = 'nodejs',
+    DEFAULT = '',
+}

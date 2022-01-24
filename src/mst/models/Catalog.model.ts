@@ -6,16 +6,17 @@ import { CatalogSubRoute } from './CatalogSubRoute.model'
 export const Catalog = types
     .model('Catalog', {
         id: types.identifier,
-        route: '',
         title: '',
         checked: false,
+        route: '',
         sub_routes: types.array(CatalogSubRoute),
     })
     .views((self) => ({
         active_sub_route(): string {
-            const { active_catalog_routes$ } = getParentOfType(self, Root$)
+            const { catalog_active_sub_routes$: catalog_active_sub_routes$ } =
+                getParentOfType(self, Root$)
 
-            return active_catalog_routes$.get(self.id)?.sub_route ?? ''
+            return catalog_active_sub_routes$.get(self.id)?.sub_route ?? ''
         },
     }))
     .actions((self) => ({
