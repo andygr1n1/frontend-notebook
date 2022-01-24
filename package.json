@@ -12,6 +12,7 @@
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
         "@mui/material": "^5.2.7",
+        "@tailwindcss/forms": "^0.4.0",
         "@types/localforage": "^0.0.34",
         "@types/lodash": "^4.14.178",
         "@types/react-animations": "^1.0.0",

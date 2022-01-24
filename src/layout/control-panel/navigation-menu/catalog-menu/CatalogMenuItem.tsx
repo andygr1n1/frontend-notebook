@@ -16,6 +16,8 @@ export const CatalogMenuItem: React.FC<{ catalog: ICatalog }> = observer(
 
         const closeRoutesModal = () => onChangeField('app_routes_menu', false)
 
+        console.log('/${route}/${active_sub_route()}', `/${route}/${active_sub_route()}`)
+
         return (
             <li key={id} className="flex h-[fit-content] relative">
                 <PingAnimationOnExit
@@ -31,7 +33,7 @@ export const CatalogMenuItem: React.FC<{ catalog: ICatalog }> = observer(
                                         : ''
                                 }`
                             }}
-                            to={`/${route}/${active_sub_route()}`}>
+                            to={route ? `/${route}/${active_sub_route()}` : '/'}>
                             {title}
                         </NavLink>
                     </button>

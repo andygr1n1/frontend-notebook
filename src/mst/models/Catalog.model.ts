@@ -1,6 +1,7 @@
 import { getParentOfType, types } from 'mobx-state-tree'
 import { Catalogs$ } from '../stores/Catalogs.store'
 import { Root$ } from '../stores/Root.store'
+import { CatalogSubRoute } from './CatalogSubRoute.model'
 
 export const Catalog = types
     .model('Catalog', {
@@ -8,6 +9,7 @@ export const Catalog = types
         route: '',
         title: '',
         checked: false,
+        sub_routes: types.array(CatalogSubRoute),
     })
     .views((self) => ({
         active_sub_route(): string {

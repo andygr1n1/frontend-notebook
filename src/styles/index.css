@@ -25,7 +25,7 @@
 
     body {
         /* @apply px-36 bg-gray-900; */
-        @apply flex items-center justify-center px-36 overflow-x-hidden;
+        @apply flex items-center justify-center px-36 overflow-hidden;
         background-color: #111827;
         background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.35' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
         -webkit-font-smoothing: antialiased;
@@ -109,5 +109,30 @@
     }
     .color-pen {
         @apply h-7 w-7 rounded-full cursor-pointer;
+    }
+}
+
+@layer utilities {
+    .placeholder-italic::placeholder {
+        @apply italic;
+    }
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    .overflow-wrap-anywhere {
+        word-break: break-word !important; /* Chrome, Safari */
+        overflow-wrap: anywhere !important; /* Firefox */
+    }
+
+    .absolute-center {
+        @apply absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2;
     }
 }

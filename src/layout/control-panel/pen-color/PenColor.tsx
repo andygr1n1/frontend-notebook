@@ -5,7 +5,6 @@ import { PenColorMenu } from './PenColorMenu'
 
 export const PenColor = observer(() => {
     const { onChangeField, pen_color_menu } = useRootStore()
-    console.log('pen color in navmenu')
     return (
         <>
             <span

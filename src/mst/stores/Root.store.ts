@@ -82,7 +82,6 @@ export const Root$ = types
         },
         onChangePenColor(new_color: PEN_COLOR): void {
             self.pen_color_menu = false
-            localStorage.setItem('pen_color', JSON.stringify(`${new_color}`))
             self.pen_color = new_color
         },
     }))

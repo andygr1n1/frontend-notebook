@@ -19,6 +19,45 @@ export const frontend_catalog$: ICatalogSnapshotIn[] = [
         route: 'git',
         title: 'Git',
         checked: true,
+        sub_routes: [
+            { id: uuid(), route: 'stash', title: 'Stash' },
+            {
+                id: uuid(),
+                route: 'delete_commit',
+                title: 'Delete Commit',
+            },
+            {
+                id: uuid(),
+                route: 'clean_up_remote_branch',
+                title: 'Clean up remote branch',
+            },
+            {
+                id: uuid(),
+                route: 'rewriting_history',
+                title: 'Rewriting history',
+            },
+            {
+                id: uuid(),
+                route: 'change_branch_name',
+                title: '🈴 Change branch name',
+            },
+            {
+                id: uuid(),
+                route: 'delete_branch',
+                title: '🚮 Delete branch',
+            },
+            {
+                id: uuid(),
+                route: 'change_remote_repository',
+                title: 'Change remote repository',
+            },
+            { id: uuid(), route: 'git-apps', title: '🔖 Apps' },
+            {
+                id: uuid(),
+                route: 'git-tutorials',
+                title: '🎬 Git tutorials',
+            },
+        ],
     },
     {
         id: uuid(),

@@ -1,9 +1,5 @@
 import localForage from 'localforage'
-import {
-    applySnapshot,
-    getSnapshot,
-    onSnapshot,
-} from 'mobx-state-tree'
+import { applySnapshot, getSnapshot, onSnapshot } from 'mobx-state-tree'
 import type { IRoot$, IRoot$SnapshotIn } from '../mst/types'
 
 const localforage_config = () => {
@@ -17,9 +13,9 @@ const localforage_config = () => {
     })
 }
 
-export const initialize_local_forage = (root_store: IRoot$) => {
+export const initialize_local_forage = async (root_store: IRoot$) => {
     localforage_config()
-    localForage
+    return await localForage
         .keys()
         .then((keys) => {
             const rootKeys: string[] = []
@@ -32,7 +28,7 @@ export const initialize_local_forage = (root_store: IRoot$) => {
             return rootKeys
         })
         .then((keys) => {
-            getItemsFromLocalForage(keys, root_store)
+            return getItemsFromLocalForage(keys, root_store)
         })
         .catch((e) => console.log('init_local_forage() error:::', e))
 }
@@ -44,12 +40,12 @@ const getItemsFromLocalForage = (keys: string[], root_store: IRoot$) => {
         values.push(res)
     })
 
-    Promise.all(values).then((values) => {
-        createStoreFromFragments(keys, values, root_store)
-        localforage_save_on_snapshot(root_store)
-    })
-
-    return values
+    return Promise.all(values)
+        .then((values) => {
+            createStoreFromFragments(keys, values, root_store)
+            localforage_save_on_snapshot(root_store)
+        })
+        .then(() => true)
 }
 
 const createStoreFromFragments = (keys: string[], values: any[], root_store: IRoot$) => {

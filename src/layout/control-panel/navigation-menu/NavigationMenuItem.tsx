@@ -16,7 +16,7 @@ export const NavigationMenuItem: React.FC<{ catalog: ICatalog }> = observer(
                                 : ''
                         }`
                     }}
-                    to={`/${route}/${active_sub_route()}`}>
+                    to={route ? `/${route}/${active_sub_route()}` : '/'}>
                     {title}
                 </NavLink>
             </li>
