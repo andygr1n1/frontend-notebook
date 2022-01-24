@@ -5,8 +5,9 @@ import { PEN_COLOR } from '../../helpers/enums'
 import { Catalogs$ } from './Catalogs.store'
 import localForage from 'localforage'
 import type { Location } from 'react-router-dom'
-import { ActiveCatalogRoute } from '../models/ActiveCatalogRoute.model'
 import _ from 'lodash'
+import { CatalogSubRoute } from '../models/CatalogSubRoute.model'
+import type { ICatalog } from '../types'
 
 export const Root$ = types
     .model('Root$', {
@@ -20,7 +21,7 @@ export const Root$ = types
         app_routes_menu: false,
         success_message_modal_is_open: false,
         catalogs$: types.optional(Catalogs$, {}),
-        active_catalog_routes$: types.map(ActiveCatalogRoute),
+        catalog_active_sub_routes$: types.map(CatalogSubRoute),
     })
     .actions((self) => ({
         onChangeField<Key extends keyof typeof self>(key: Key, value: typeof self[Key]) {
@@ -33,15 +34,18 @@ export const Root$ = types
             }`
 
             const currentLocationParts = _.compact(self.current_location.split('/'))
-            const catalogRouteId = _.find(self.catalogs$.all_catalogs$, {
+            const catalogRoute = _.find(self.catalogs$.all_catalogs$, {
                 route: currentLocationParts[0] ?? '',
-            })?.id
+            })
 
-            if (!catalogRouteId) return
+            if (!catalogRoute?.id) return
 
-            self.active_catalog_routes$.put({
-                id: catalogRouteId,
+            self.catalogs$.onChangeField('active_catalog', catalogRoute)
+
+            self.catalog_active_sub_routes$.put({
+                id: catalogRoute.id,
                 sub_route: currentLocationParts[1] || '',
+                title: '',
             })
         },
         scrollToElement(id?: string) {

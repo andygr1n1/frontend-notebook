@@ -2,10 +2,10 @@ import { observer } from 'mobx-react-lite'
 import { Module } from '../../layout/Module'
 import { useRootStore } from '../../StoreProvider'
 
-export const CssNotes = observer(() => {
+export const LinuxNotes = observer(() => {
     const {
-        catalogs$: { catalogSubRoutes: CatalogSubRoutes },
+        catalogs$: { LinuxCatalogSubRoutes },
     } = useRootStore()
 
-    return <Module routes={CatalogSubRoutes} />
+    return <Module routes={LinuxCatalogSubRoutes} />
 })
