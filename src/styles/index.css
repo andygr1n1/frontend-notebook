@@ -27,6 +27,10 @@
         --tw-ring-shadow: transparent !important;
     }
 
+    input[type='checkbox'] {
+        @apply text-primary-color;
+    }
+
     body {
         /* @apply px-36 bg-gray-900; */
         @apply flex items-center justify-center px-36 overflow-hidden;

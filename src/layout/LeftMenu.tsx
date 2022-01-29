@@ -35,7 +35,7 @@ export const SearchInput = observer(() => {
             mb-3 mx-3
             text-gray-600 placeholder-italic
             border border-gray-500 rounded
-            focus:border-2 focus:mb-[10px] focus:border-primary-color
+            focus:border focus:border-gray-500
             "
         />
     )
