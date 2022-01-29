@@ -78,7 +78,7 @@ export const Catalogs$ = types
             }
         },
     }))
-    .views((self) => ({
+    .views(() => ({
         // get GitCatalogSubRoutes(): ICatalogSubRoute[] {
         //     // const route = self.active_catalog?.route
 
