@@ -3,7 +3,7 @@ import { applySnapshot, types } from 'mobx-state-tree'
 import { frontend_catalog$ } from '../../data-center/frontend_catalog'
 import type { ICatalog, ICatalogSubRoute } from '../types'
 import { Catalog } from '../models/Catalog.model'
-import { CATALOG_ROUTE } from '../../helpers/enums'
+import type { CATALOG_ROUTE } from '../../helpers/enums'
 
 export const Catalogs$ = types
     .model('Catalogs$', {
@@ -47,6 +47,15 @@ export const Catalogs$ = types
                 ) || []
             )
         },
+        get allCatalogsInGlobalSearch(): boolean {
+            const atLeastOneCatalogIsNotInGlobalSearch = _.find(self.all_catalogs$, {
+                in_global_search: false,
+            })
+
+            if (atLeastOneCatalogIsNotInGlobalSearch) return false
+
+            return true
+        },
     }))
     .actions((self) => ({
         fetchCalatogs() {
@@ -57,34 +66,49 @@ export const Catalogs$ = types
                 alert(`error in fetchCalatogs()::: ${e}`)
             }
         },
-    }))
-    .views((self) => ({
-        get GitCatalogSubRoutes(): ICatalogSubRoute[] {
-            // const route = self.active_catalog?.route
-
-            const subroutes = self.getCatalog(CATALOG_ROUTE.GIT)?.sub_routes
-
-            return (
-                subroutes?.filter((sub_route) =>
-                    _.includes(
-                        _.lowerCase(sub_route.title),
-                        _.lowerCase(self.article_search),
-                    ),
-                ) || []
-            )
+        toggleAllCatalogsInGlobalSearch(): void {
+            if (self.allCatalogsInGlobalSearch) {
+                self.all_catalogs$.forEach((catalog) =>
+                    catalog.onChangeField('in_global_search', false),
+                )
+            } else {
+                self.all_catalogs$.forEach((catalog) =>
+                    catalog.onChangeField('in_global_search', true),
+                )
+            }
         },
-        get LinuxCatalogSubRoutes(): ICatalogSubRoute[] {
-            const subroutes = self.getCatalog(CATALOG_ROUTE.LINUX)?.sub_routes
+    }))
+    .views(() => ({
+        // get GitCatalogSubRoutes(): ICatalogSubRoute[] {
+        //     // const route = self.active_catalog?.route
 
-            console.log('active_catalog', self.active_catalog?.route)
+        //     const subroutes = self.getCatalog(CATALOG_ROUTE.GIT)?.sub_routes
 
-            return (
-                subroutes?.filter((sub_route) =>
-                    _.includes(
-                        _.lowerCase(sub_route.title),
-                        _.lowerCase(self.article_search),
-                    ),
-                ) || []
-            )
+        //     return (
+        //         subroutes?.filter((sub_route) =>
+        //             _.includes(
+        //                 _.lowerCase(sub_route.title),
+        //                 _.lowerCase(self.article_search),
+        //             ),
+        //         ) || []
+        //     )
+        // },
+        // get LinuxCatalogSubRoutes(): ICatalogSubRoute[] {
+        //     const subroutes = self.getCatalog(CATALOG_ROUTE.LINUX)?.sub_routes
+
+        //     console.log('active_catalog', self.active_catalog?.route)
+
+        //     return (
+        //         subroutes?.filter((sub_route) =>
+        //             _.includes(
+        //                 _.lowerCase(sub_route.title),
+        //                 _.lowerCase(self.article_search),
+        //             ),
+        //         ) || []
+        //     )
+        // },
+
+        get globalSearchSubroutes(): ICatalogSubRoute[] {
+            return []
         },
     }))

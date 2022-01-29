@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom'
 import { GitNotes } from './modules/git/GitNotes'
-import { Home } from './modules/home/Home'
+import { GlobalSearch } from './modules/global-search/GlobalSearch'
 import { ReactNotes } from './modules/react/ReactNotes'
 import { GitIndex } from './modules/git/pages/GitIndex'
-import { HomeIndex } from './modules/home/pages/HomeIndex'
+import { GlobalSearchIndex } from './modules/global-search/pages/GlobalSearchIndex'
 import { ReactIndex } from './modules/react/pages/ReactIndex'
 import { GitRoutesComponents } from './routes-components/GitRoutesComponents'
 import { NodejsNotes } from './modules/nodejs/NodejsNotes'
@@ -29,8 +29,8 @@ export const AppRoutes = () => {
 
     return (
         <Routes>
-            <Route path="/*" element={<Home />}>
-                <Route path="" element={<HomeIndex />} />
+            <Route path="/*" element={<GlobalSearch />}>
+                <Route path="" element={<GlobalSearchIndex />} />
             </Route>
             <Route path={`/${CATALOG_ROUTE.GIT}/*`} element={<GitNotes />}>
                 <Route path="" element={<GitIndex />} />

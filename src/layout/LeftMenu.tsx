@@ -8,7 +8,7 @@ export const LeftMenu: React.FC<{ sub_routes: ICatalogSubRoute[] }> = ({
 }) => {
     return (
         <div className="relative flex flex-col w-[320px] py-10 ">
-            <SearchInput />
+            {!!sub_routes.length && <SearchInput />}
             <ul className="overflow-auto marker:text-primary-color pl-10 pr-5 list-disc animate-fade-in-down ">
                 {sub_routes.map(({ sub_route, title }) => (
                     <LeftMenuLink key={sub_route} route={sub_route} title={title} />
@@ -32,21 +32,11 @@ export const SearchInput = observer(() => {
             placeholder="Search..."
             value={article_search}
             className="
-            flex
-            mx-5
-            my-2
-            px-3
-            py-1.5
-            text-base
-            font-normal
-            text-gray-700
-            bg-white bg-clip-padding
-            border border-solid border-gray-600
-            rounded
-            placeholder-italic
-            transition-all
-            focus:text-gray-700 focus:!border-3 focus:!border-gray-600 focus:outline-none focus:ring-0
-            focus:translate-x-[-1px]  focus:translate-y-[-1px] focus:shadow-xl"
+            mb-3 mx-3
+            text-gray-600 placeholder-italic
+            border border-gray-500 rounded
+            focus:border-2 focus:mb-[10px] focus:border-primary-color
+            "
         />
     )
 })

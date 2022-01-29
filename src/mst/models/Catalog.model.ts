@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import { getParentOfType, types } from 'mobx-state-tree'
 import { Catalogs$ } from '../stores/Catalogs.store'
 import { Root$ } from '../stores/Root.store'
@@ -10,6 +11,7 @@ export const Catalog = types
         checked: false,
         route: '',
         sub_routes: types.array(CatalogSubRoute),
+        in_global_search: false,
     })
     .views((self) => ({
         active_sub_route(): string {
@@ -34,5 +36,28 @@ export const Catalog = types
             }
 
             self.checked = !self.checked
+        },
+        toggleGlobalSearch(input: React.MutableRefObject<HTMLInputElement | null>) {
+            const { all_catalogs$ } = getParentOfType(self, Catalogs$)
+            self.in_global_search = !self.in_global_search
+
+            const inputElement = input?.current
+            if (inputElement) {
+                const atLeastOneCatalogInGlobalSearch = _.find(all_catalogs$, {
+                    in_global_search: true,
+                })
+                const atLeastOneCatalogIsNotInGlobalSearch = _.find(all_catalogs$, {
+                    in_global_search: false,
+                })
+
+                if (
+                    (self.in_global_search && atLeastOneCatalogIsNotInGlobalSearch) ||
+                    (!self.in_global_search && atLeastOneCatalogInGlobalSearch)
+                ) {
+                    inputElement.indeterminate = true
+                } else {
+                    inputElement.indeterminate = false
+                }
+            }
         },
     }))

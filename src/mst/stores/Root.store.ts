@@ -7,7 +7,6 @@ import localForage from 'localforage'
 import type { Location } from 'react-router-dom'
 import _ from 'lodash'
 import { CatalogSubRoute } from '../models/CatalogSubRoute.model'
-import type { ICatalog } from '../types'
 
 export const Root$ = types
     .model('Root$', {
