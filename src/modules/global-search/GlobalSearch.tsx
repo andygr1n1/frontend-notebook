@@ -1,5 +1,5 @@
 import { Module } from '../../layout/Module'
 
-export const Home = () => {
+export const GlobalSearch = () => {
     return <Module routes={[]} />
 }

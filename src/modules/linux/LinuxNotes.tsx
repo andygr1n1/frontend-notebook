@@ -4,8 +4,8 @@ import { useRootStore } from '../../StoreProvider'
 
 export const LinuxNotes = observer(() => {
     const {
-        catalogs$: { LinuxCatalogSubRoutes },
+        catalogs$: { catalogSubRoutes },
     } = useRootStore()
 
-    return <Module routes={LinuxCatalogSubRoutes} />
+    return <Module routes={catalogSubRoutes} />
 })

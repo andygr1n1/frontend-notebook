@@ -4,8 +4,8 @@ import { useRootStore } from '../../StoreProvider'
 
 export const CssNotes = observer(() => {
     const {
-        catalogs$: { catalogSubRoutes: CatalogSubRoutes },
+        catalogs$: { catalogSubRoutes },
     } = useRootStore()
 
-    return <Module routes={CatalogSubRoutes} />
+    return <Module routes={catalogSubRoutes} />
 })
