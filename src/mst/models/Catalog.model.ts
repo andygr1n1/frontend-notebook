@@ -38,15 +38,15 @@ export const Catalog = types
             self.checked = !self.checked
         },
         toggleGlobalSearch(input: React.MutableRefObject<HTMLInputElement | null>) {
-            const { all_catalogs$ } = getParentOfType(self, Catalogs$)
+            const { allInfoCatalogs } = getParentOfType(self, Catalogs$)
             self.in_global_search = !self.in_global_search
 
             const inputElement = input?.current
             if (inputElement) {
-                const atLeastOneCatalogInGlobalSearch = _.find(all_catalogs$, {
+                const atLeastOneCatalogInGlobalSearch = _.find(allInfoCatalogs, {
                     in_global_search: true,
                 })
-                const atLeastOneCatalogIsNotInGlobalSearch = _.find(all_catalogs$, {
+                const atLeastOneCatalogIsNotInGlobalSearch = _.find(allInfoCatalogs, {
                     in_global_search: false,
                 })
 

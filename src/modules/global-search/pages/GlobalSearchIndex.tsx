@@ -1,15 +1,18 @@
 import { observer } from 'mobx-react-lite'
 import { useRef } from 'react'
+import { NavLink } from 'react-router-dom'
 import { Content } from '../../../layout/Content'
 import { useRootStore } from '../../../StoreProvider'
 
 export const GlobalSearchIndex = observer(() => {
     const {
         catalogs$: {
-            all_catalogs$,
+            allInfoCatalogs,
             globalSearchSubroutes,
             allCatalogsInGlobalSearch,
             toggleAllCatalogsInGlobalSearch,
+            global_search,
+            onChangeField,
         },
     } = useRootStore()
 
@@ -30,7 +33,7 @@ export const GlobalSearchIndex = observer(() => {
                     All catalogs
                 </label>
                 <div className="flex gap-3">
-                    {all_catalogs$.map(
+                    {allInfoCatalogs.map(
                         ({ id, in_global_search, title, toggleGlobalSearch }) => (
                             <label key={id} className="flex items-center">
                                 <input
@@ -49,7 +52,10 @@ export const GlobalSearchIndex = observer(() => {
             </div>
             <input
                 type="text"
+                autoFocus
                 placeholder="Search"
+                value={global_search}
+                onChange={(e) => onChangeField('global_search', e.target.value)}
                 className="
                 my-5
                 rounded
@@ -58,9 +64,26 @@ export const GlobalSearchIndex = observer(() => {
                 focus:translate-x-[1px] focus:translate-y-[1px] focus:border:xl
                 "
             />
-            <div>
-                {globalSearchSubroutes.map((subroute) => (
-                    <span>{subroute.title}</span>
+            <div className="flex flex-wrap gap-3">
+                {globalSearchSubroutes.map(({ sub_route, title, parentRoute }) => (
+                    <span
+                        className="
+                        text-gray-600
+                        rounded
+                        bg-gray-50
+                    ">
+                        <NavLink
+                            className={(navData) => {
+                                return `left-menu-link p-3 hover:font-normal hover:text-white hover:bg-primary-color rounded ${
+                                    navData.isActive
+                                        ? '!text-primary-color font-bold'
+                                        : ''
+                                }`
+                            }}
+                            to={`${parentRoute}/${sub_route}`}>
+                            {title}
+                        </NavLink>
+                    </span>
                 ))}
             </div>
         </Content>
