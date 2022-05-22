@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { ReactNode, useEffect, useRef } from 'react'
 import { keyframes } from 'styled-components'
 import styled from 'styled-components'
 import { zoomIn } from 'react-animations'
@@ -12,6 +12,7 @@ const Animation = styled.div`
 export const ZoomInAnimationContainer: React.FC<{
     visibility: boolean
     className?: string
+    children?: ReactNode
     onClose?: () => void
 }> = ({ visibility, className = '', onClose, children }) => {
     const animationRef = useRef<HTMLDivElement | null>(null)

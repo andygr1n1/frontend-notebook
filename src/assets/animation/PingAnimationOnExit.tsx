@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 
-export const PingAnimationOnExit: React.FC<{ action?: () => void }> = ({
-    action,
-    children,
-}) => {
+export const PingAnimationOnExit: React.FC<{
+    action?: () => void
+    children?: ReactNode
+}> = ({ action, children }) => {
     const [animator, setAnimator] = useState(false)
     return (
         <div
