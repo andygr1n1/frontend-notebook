@@ -1,11 +1,4 @@
 :root {
-    --top-bar-height: 56px;
-    --side-bar-width: 256px;
-    --heading-1: #{$x-global-heading1};
-    --heading-2: #{$x-global-heading2};
-    --heading-3: #{$x-global-heading3};
-    --heading-4: #{$x-global-heading4};
-    --heading-5: #{$x-global-heading5};
-    --font-body: #{$x-global-font-body};
-    --font-mono: #{$x-global-font-mono};
+    --font-body: #{$t-font-families-base};
+    --font-mono: #{$t-font-families-mono};
 }
