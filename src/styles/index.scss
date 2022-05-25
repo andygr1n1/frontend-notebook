@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import './normalize.css';
+@import './_variables';
+@import './_root_variables';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,7 +27,7 @@
     }
 
     input:focus {
-        --tw-ring-shadow: transparent !important;
+        --tw-ring-shadow: transparent ${!important};
     }
 
     input[type='checkbox'] {
@@ -106,14 +109,14 @@
 
     .catalog-menu-item {
         @apply flex h-20 w-20 select-none items-center justify-center rounded-xl border-2 border-primary-color 
-               bg-primary-color bg-opacity-10 !text-white
+               bg-primary-color bg-opacity-10 text-white
              transition-all ease-in-out 
-               hover:animate-pulse hover:font-bold;
+               hover:animate-pulse hover:font-bold #{!important};
     }
 
     .anchor-menu-link {
         @apply flex h-full w-full cursor-pointer items-center justify-end gap-4 py-3 italic opacity-70 transition-all ease-out 
-        hover:animate-pulse hover:font-bold hover:!text-primary-color hover:opacity-100;
+        hover:animate-pulse hover:font-bold hover:text-primary-color hover:opacity-100 #{!important};
     }
     .color-pen {
         @apply h-7 w-7 cursor-pointer rounded-full;
@@ -136,8 +139,8 @@
     }
 
     .overflow-wrap-anywhere {
-        word-break: break-word !important; /* Chrome, Safari */
-        overflow-wrap: anywhere !important; /* Firefox */
+        word-break: break-word #{!important}; /* Chrome, Safari */
+        overflow-wrap: anywhere #{!important}; /* Firefox */
     }
 
     .absolute-center {

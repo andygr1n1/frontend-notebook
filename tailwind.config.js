@@ -4,7 +4,10 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         fontFamily: {
-            sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            sans: [
+                'var(--$x-global-font-families-nunito)',
+                ...defaultTheme.fontFamily.sans,
+            ],
             serif: ['Roboto Slab', ...defaultTheme.fontFamily.serif],
             mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
         },
