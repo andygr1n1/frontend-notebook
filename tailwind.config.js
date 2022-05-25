@@ -4,12 +4,9 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         fontFamily: {
-            sans: [
-                'var(--$x-global-font-families-nunito)',
-                ...defaultTheme.fontFamily.sans,
-            ],
+            sans: ['var(--font-body)', ...defaultTheme.fontFamily.sans],
             serif: ['Roboto Slab', ...defaultTheme.fontFamily.serif],
-            mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
+            mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
         },
         extend: {
             colors: {
