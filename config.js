@@ -3,29 +3,14 @@ module.exports = {
     platforms: {
         scss: {
             transformGroup: 'scss',
-            prefix: 'X',
+            prefix: '',
             buildPath: 'src/styles/',
             files: [
                 {
-                    destination: 'map.scss',
-                    format: 'scss/map-deep',
-                    mapName: 'my-tokens',
+                    destination: '_variables.scss',
+                    format: 'scss/variables',
                 },
             ],
-        },
-    },
-    transform: {
-        type: 'fontSizes',
-        transformer: (token) => {
-            console.log('tok', token)
-            return token.path
-        },
-    },
-    format: {
-        myFormat: ({ dictionary, platform }) => {
-            return dictionary.allTokens
-                .map((token) => `${token.name}:312312312312 ${token.value}`)
-                .join('+++++')
         },
     },
 }
