@@ -6,7 +6,7 @@ export const ThemeMode = observer(() => {
     const { dark_mode, onChangeField } = useRootStore()
 
     useEffect(() => {
-        const rootPage = document.getElementById('root')
+        const rootPage = document.body
 
         if (rootPage && dark_mode) rootPage.classList.add('dark-theme')
         if (rootPage && !dark_mode) rootPage.classList.remove('dark-theme')
@@ -14,7 +14,7 @@ export const ThemeMode = observer(() => {
 
     return (
         <span
-            className="flex items-center justify-center w-10 h-10 cursor-pointer rounded-full select-none"
+            className="flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-full"
             onClick={() => {
                 onChangeField('dark_mode', !dark_mode)
             }}>

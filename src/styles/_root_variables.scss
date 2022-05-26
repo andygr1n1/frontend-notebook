@@ -1,4 +1,11 @@
 :root {
     --font-body: #{$t-font-families-base};
     --font-mono: #{$t-font-families-mono};
+    --bg-color-primary: white;
+    --text-color-primary: #4b5563;
+}
+
+body.dark-theme {
+    --bg-color-primary: #374151;
+    --text-color-primary: #e5e7eb;
 }

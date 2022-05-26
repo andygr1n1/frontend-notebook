@@ -12,6 +12,7 @@
         "@ant-design/icons": "^4.7.0",
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
+        "@headlessui/react": "^1.6.3",
         "@mui/material": "^5.8.0",
         "antd": "^4.20.6",
         "localforage": "^1.10.0",

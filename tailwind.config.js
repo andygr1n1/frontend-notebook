@@ -11,6 +11,8 @@ module.exports = {
         extend: {
             colors: {
                 'primary-color': 'var(--color-primary)',
+                'bg-color': 'var(--bg-color-primary)',
+                'text-color': 'var(--text-color-primary)',
             },
             animation: {
                 'spin-slow': 'spin 10s linear infinite',
