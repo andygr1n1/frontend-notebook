@@ -52,6 +52,10 @@
         @apply bg-gray-700 text-gray-200;
     }
 
+    svg, img {
+        @apply p-0 m-0 leading-none #{!important};
+    }
+
     code {
         @apply cursor-pointer font-mono text-base font-bold text-primary-color;
     }
