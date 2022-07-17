@@ -1,7 +1,6 @@
 import { createRoot } from 'react-dom/client'
 
 import { BrowserRouter } from 'react-router-dom'
-import 'antd/dist/antd.css'
 import './styles/index.scss'
 
 import { App } from './App'

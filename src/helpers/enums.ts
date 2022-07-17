@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 export enum EMPTY_PAGE_LOGO_ENUM {
     HOME = 'Home',
     REACT = 'React',
@@ -11,7 +13,16 @@ export enum PEN_COLOR {
     INDIGO = '#2563eb',
 }
 
+export enum GLOBAL_ROUTE {
+    BLOG = 'blog',
+    HOME = 'home',
+    ABOUT = 'about',
+    CONTACTS = 'contacts',
+    CV = 'cv',
+}
+
 export enum CATALOG_ROUTE {
+    SEARCH = 'search',
     LINUX = 'linux',
     GIT = 'git',
     JS = 'js',

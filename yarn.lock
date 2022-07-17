@@ -2600,6 +2600,11 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+material-icons@^1.11.5:
+  version "1.11.5"
+  resolved "https://registry.yarnpkg.com/material-icons/-/material-icons-1.11.5.tgz#8134f404ebe07f112d1989c1f2150238ba637954"
+  integrity sha512-JTf+IwOcKV6Y6JhUBqAnRKHgQFGROtoewHKwORscI2xLK9R3rJOTzzLZwxFgsa7SRfB2geghgfOD6DuVnQLx6A==
+
 memoize-one@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-6.0.0.tgz#b2591b871ed82948aee4727dc6abceeeac8c1045"

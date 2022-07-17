@@ -1,12 +1,12 @@
-import { ChangeBranchName } from '../modules/git/pages/ChangeBranchName'
-import { ChangeRemoteRepository } from '../modules/git/pages/ChangeRemoteRepository'
-import { CleanUpRemoteBranch } from '../modules/git/pages/CleanUpRemoteBranch'
-import { DeleteBranch } from '../modules/git/pages/DeleteBranch'
-import { DeleteCommit } from '../modules/git/pages/DeleteCommit'
-import { GitApps } from '../modules/git/pages/GitApps'
-import { GitTutorials } from '../modules/git/pages/GitTutorials'
-import { RewritingHistory } from '../modules/git/pages/RewritingHistory'
-import { Stash } from '../modules/git/pages/Stash'
+import { ChangeBranchName } from '../modules/blog/git/pages/ChangeBranchName'
+import { ChangeRemoteRepository } from '../modules/blog/git/pages/ChangeRemoteRepository'
+import { CleanUpRemoteBranch } from '../modules/blog/git/pages/CleanUpRemoteBranch'
+import { DeleteBranch } from '../modules/blog/git/pages/DeleteBranch'
+import { DeleteCommit } from '../modules/blog/git/pages/DeleteCommit'
+import { GitApps } from '../modules/blog/git/pages/GitApps'
+import { GitTutorials } from '../modules/blog/git/pages/GitTutorials'
+import { RewritingHistory } from '../modules/blog/git/pages/RewritingHistory'
+import { Stash } from '../modules/blog/git/pages/Stash'
 
 export const GitRoutesComponents: React.FC<{ route: string }> = ({ route }) => {
     if (route === 'stash') return <Stash />

@@ -9,7 +9,6 @@
         "style": "style-dictionary build"
     },
     "dependencies": {
-        "@ant-design/icons": "^4.7.0",
         "@emotion/react": "^11.7.1",
         "@emotion/styled": "^11.6.0",
         "@headlessui/react": "^1.6.3",
@@ -17,6 +16,7 @@
         "@mui/material": "^5.8.0",
         "antd": "^4.20.6",
         "localforage": "^1.10.0",
+        "material-icons": "^1.11.5",
         "mobx": "^6.5.0",
         "mobx-react-lite": "^3.4.0",
         "mobx-state-tree": "^5.1.5",
