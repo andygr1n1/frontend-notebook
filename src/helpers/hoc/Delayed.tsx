@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, ReactNode } from 'react'
 
 const useDelayedState = () => {
     const [isShown, setIsShown] = useState(false)
@@ -11,11 +11,11 @@ const useDelayedState = () => {
     }
 }
 
-export const Delayed: React.FC<{ waitBeforeShow?: number; trigger: boolean }> = ({
-    children,
-    waitBeforeShow = 400,
-    trigger,
-}) => {
+export const Delayed: React.FC<{
+    waitBeforeShow?: number
+    trigger: boolean
+    children?: ReactNode
+}> = ({ children, waitBeforeShow = 400, trigger }) => {
     const { isShown, changeDelayState } = useDelayedState()
 
     useEffect(() => {

@@ -1,4 +1,6 @@
-export const Dashboard: React.FC<{ background?: string }> = ({
+import type { ReactNode } from 'react'
+
+export const Dashboard: React.FC<{ background?: string; children?: ReactNode }> = ({
     background = '#add8e652',
     children,
 }) => {

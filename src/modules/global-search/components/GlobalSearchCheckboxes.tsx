@@ -20,19 +20,19 @@ export const GlobalSearchCheckboxes = observer(() => {
                     ref={allCatalogsCheckboxRef}
                     checked={allCatalogsInGlobalSearch}
                     type="checkbox"
-                    className="rounded cursor-pointer w-5 h-5 mr-3"
+                    className="mr-3 h-5 w-5 cursor-pointer rounded"
                     onChange={toggleAllCatalogsInGlobalSearch}
                 />
                 All catalogs
             </label>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3 ">
                 {allInfoCatalogs.map(
                     ({ id, in_global_search, title, toggleGlobalSearch }) => (
                         <label key={id} className="flex items-center">
                             <input
                                 checked={in_global_search}
                                 type="checkbox"
-                                className="rounded cursor-pointer w-5 h-5 mr-3"
+                                className="mr-3 h-5 w-5 cursor-pointer rounded"
                                 onChange={() =>
                                     toggleGlobalSearch(allCatalogsCheckboxRef)
                                 }

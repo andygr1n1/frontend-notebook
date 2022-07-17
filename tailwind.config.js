@@ -1,18 +1,18 @@
-const colors = require('tailwindcss/colors')
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
-        colors,
         fontFamily: {
-            sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            sans: ['var(--font-body)', ...defaultTheme.fontFamily.sans],
             serif: ['Roboto Slab', ...defaultTheme.fontFamily.serif],
-            mono: ['Roboto Mono', ...defaultTheme.fontFamily.mono],
+            mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
         },
         extend: {
             colors: {
                 'primary-color': 'var(--color-primary)',
+                'bg-color': 'var(--bg-color-primary)',
+                'text-color': 'var(--text-color-primary)',
             },
             animation: {
                 'spin-slow': 'spin 10s linear infinite',

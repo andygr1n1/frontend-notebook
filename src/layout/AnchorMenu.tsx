@@ -17,7 +17,7 @@ export const AnchorMenu: React.FC<{ anchors: IAnchor[] }> = observer(({ anchors 
     }, [])
 
     return (
-        <ul className="w-72 py-10 overflow-auto">
+        <ul className="hidden w-72 flex-col overflow-auto py-10 2xl:flex">
             {anchors.map(({ id, title }) => (
                 <li key={id}>
                     <a
