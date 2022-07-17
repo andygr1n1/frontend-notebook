@@ -19,6 +19,7 @@ export const Root$ = types
         pen_color_menu: false,
         app_routes_menu: false,
         success_message_modal_is_open: false,
+        navigation_menu_mobile_status: false,
         catalogs$: types.optional(Catalogs$, {}),
         catalog_active_sub_routes$: types.map(CatalogSubRoute),
     })

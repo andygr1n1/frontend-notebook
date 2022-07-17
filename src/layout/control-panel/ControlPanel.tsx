@@ -6,10 +6,10 @@ import { ThemeMode } from './color-theme/ThemeMode'
 
 export const ControlPanel = () => {
     return (
-        <div className="relative flex w-full h-14 items-center justify-center px-4 gap-10 border-t border-primary-color border-opacity-30">
+        <div className="relative hidden h-14 w-full items-center justify-center gap-10 border-t border-primary-color border-opacity-30 px-4 2xl:flex">
             <NavigationMenu />
 
-            <div className="absolute right-3 flex gap-5 justify-center items-center">
+            <div className="absolute right-3 flex items-center justify-center gap-5">
                 <PenColor />
                 <ThemeMode />
             </div>

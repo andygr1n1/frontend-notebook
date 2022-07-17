@@ -5,7 +5,7 @@ import { LeftMenu } from './LeftMenu'
 
 export const Module: React.FC<{ routes: ICatalogSubRoute[] }> = ({ routes }) => {
     return (
-        <div className="flex flex-auto overflow-auto no-scrollbar">
+        <div className="no-scrollbar flex flex-auto overflow-auto">
             <LeftMenu sub_routes={routes} />
             <Outlet />
         </div>

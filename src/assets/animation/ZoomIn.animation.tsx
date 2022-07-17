@@ -37,8 +37,11 @@ export const ZoomInAnimationContainer: React.FC<{
             }
         }
 
-        window.addEventListener('click', AnimationClickEventListener)
-        window.addEventListener('keydown', EscButtonEventListener)
+        const timeoutId = setTimeout(() => {
+            window.addEventListener('click', AnimationClickEventListener)
+            window.addEventListener('keydown', EscButtonEventListener)
+            clearTimeout(timeoutId)
+        }, 100)
 
         return () => {
             console.log('exit from ZoomInAnimationContainer ')

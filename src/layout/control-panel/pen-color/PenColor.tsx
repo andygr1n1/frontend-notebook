@@ -6,12 +6,12 @@ import { PenColorMenu } from './PenColorMenu'
 export const PenColor = observer(() => {
     const { onChangeField, pen_color_menu } = useRootStore()
     return (
-        <>
+        <div className="relative flex">
             <span
                 className="color-pen bg-primary-color"
                 onClick={() => onChangeField('pen_color_menu', !pen_color_menu)}
             />
             {pen_color_menu && <PenColorMenu />}
-        </>
+        </div>
     )
 })

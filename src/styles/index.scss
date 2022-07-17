@@ -2,8 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 @import './normalize.css';
+@import './_variables.scss';
+@import './_root_variables.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,7 +28,7 @@
     }
 
     input:focus {
-        --tw-ring-shadow: transparent !important;
+        --tw-ring-shadow: transparent ${!important};
     }
 
     input[type='checkbox'] {
@@ -33,7 +37,7 @@
 
     body {
         /* @apply px-36 bg-gray-900; */
-        @apply flex items-center justify-center px-36 overflow-hidden;
+        @apply flex items-center justify-center overflow-hidden 2xl:px-36;
         background-color: #111827;
         background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.35' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
         -webkit-font-smoothing: antialiased;
@@ -41,23 +45,27 @@
     }
 
     #root {
-        @apply relative flex flex-col gap-3 pt-3 h-full w-[1640px] bg-white font-sans text-base text-gray-600 selection:bg-primary-color animate-fade-in-down;
+        @apply relative flex h-full w-[1640px] animate-fade-in-down flex-col gap-3 bg-white pt-3 font-sans text-base text-gray-600 selection:bg-primary-color;
     }
 
-    #root.dark-theme {
+    body.dark-theme  #root {
         @apply bg-gray-700 text-gray-200;
     }
 
+    svg, img {
+        @apply p-0 m-0 leading-none #{!important};
+    }
+
     code {
-        @apply font-mono text-primary-color cursor-pointer text-base font-bold;
+        @apply cursor-pointer font-mono text-base font-bold text-primary-color;
     }
 
     h1 {
-        @apply text-5xl py-10;
+        @apply py-10 text-5xl;
     }
 
     h2 {
-        @apply text-3xl py-10;
+        @apply py-10 text-3xl;
     }
 
     h3 {
@@ -67,7 +75,7 @@
     h1,
     h2,
     h3 {
-        @apply font-bold font-serif select-none;
+        @apply select-none font-serif font-bold;
     }
 
     ul,
@@ -77,7 +85,7 @@
     a:active,
     a:hover,
     a:visited {
-        @apply outline-0 text-inherit;
+        @apply text-inherit outline-0;
     }
 
     .dark-theme h1,
@@ -97,26 +105,26 @@
 
 @layer components {
     .left-menu-link {
-        @apply flex p-3 w-full h-full cursor-pointer transition-all ease-out hover:text-primary-color hover:font-bold;
+        @apply flex h-full w-full cursor-pointer p-3 transition-all ease-out hover:font-bold hover:text-primary-color;
     }
 
     .nav-menu-link {
-        @apply flex items-center justify-center gap-3 w-28 px-2 py-1 transition-all ease-in-out select-none hover:text-primary-color hover:animate-pulse hover:font-bold;
+        @apply flex w-28 select-none items-center justify-center gap-3 px-2 py-1 transition-all ease-in-out hover:animate-pulse hover:font-bold hover:text-primary-color;
     }
 
     .catalog-menu-item {
-        @apply flex items-center bg-opacity-10 justify-center border-2 rounded-xl border-primary-color w-20 h-20 
-               transition-all ease-in-out select-none
-             !text-white bg-primary-color 
-               hover:animate-pulse hover:font-bold;
+        @apply flex h-20 w-20 select-none items-center justify-center rounded-xl border-2 border-primary-color 
+               bg-primary-color bg-opacity-10 text-white
+             transition-all ease-in-out 
+               hover:animate-pulse hover:font-bold #{!important};
     }
 
     .anchor-menu-link {
-        @apply flex gap-4 justify-end items-center py-3 w-full h-full cursor-pointer transition-all italic opacity-70 ease-out 
-        hover:!text-primary-color hover:font-bold hover:opacity-100 hover:animate-pulse;
+        @apply flex h-full w-full cursor-pointer items-center justify-end gap-4 py-3 italic opacity-70 transition-all ease-out 
+        hover:animate-pulse hover:font-bold hover:text-primary-color hover:opacity-100 #{!important};
     }
     .color-pen {
-        @apply h-7 w-7 rounded-full cursor-pointer;
+        @apply h-7 w-7 cursor-pointer rounded-full;
     }
 }
 
@@ -136,8 +144,8 @@
     }
 
     .overflow-wrap-anywhere {
-        word-break: break-word !important; /* Chrome, Safari */
-        overflow-wrap: anywhere !important; /* Firefox */
+        word-break: break-word #{!important}; /* Chrome, Safari */
+        overflow-wrap: anywhere #{!important}; /* Firefox */
     }
 
     .absolute-center {
