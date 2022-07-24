@@ -11,7 +11,7 @@ export const PenColorMenu = observer(() => {
     return pen_color_menu ? (
         <ZoomInAnimationContainer
             visibility={pen_color_menu}
-            className="absolute -left-2 bottom-14 flex w-10 flex-col items-center justify-center gap-4"
+            className="absolute top-14 flex flex-col items-center justify-center gap-4"
             onClose={() => onChangeField('pen_color_menu', false)}>
             {penColors
                 .filter((color) => color !== pen_color)

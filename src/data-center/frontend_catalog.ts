@@ -3,12 +3,12 @@ import { CATALOG_ROUTE } from '../helpers/enums'
 import type { ICatalogSnapshotIn } from '../mst/types'
 
 export const frontend_catalog$: ICatalogSnapshotIn[] = [
-    {
-        id: uuid(),
-        route: CATALOG_ROUTE.DEFAULT,
-        title: 'Search',
-        checked: true,
-    },
+    // {
+    //     id: uuid(),
+    //     route: CATALOG_ROUTE.DEFAULT,
+    //     title: 'Search',
+    //     checked: true,
+    // },
     {
         id: uuid(),
         route: CATALOG_ROUTE.LINUX,
@@ -108,12 +108,12 @@ export const frontend_catalog$: ICatalogSnapshotIn[] = [
         route: CATALOG_ROUTE.NODEJS,
         title: 'Nodejs',
         checked: true,
-        sub_routes: []
+        sub_routes: [],
     },
     {
         id: uuid(),
         route: CATALOG_ROUTE.CSS,
         title: 'Css',
-        sub_routes: []
+        sub_routes: [],
     },
 ]

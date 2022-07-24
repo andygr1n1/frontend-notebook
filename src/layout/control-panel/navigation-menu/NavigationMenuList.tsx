@@ -9,7 +9,7 @@ export const NavigationMenuList = observer(() => {
     } = useRootStore()
 
     return (
-        <ul className="flex w-full items-center gap-10 ">
+        <ul className="flex w-full items-center gap-10">
             {selectedCatalogs.map((catalog) => (
                 <NavigationMenuItem key={catalog.id} catalog={catalog} />
             ))}

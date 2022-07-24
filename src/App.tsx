@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { initialize_local_forage } from './functions/indexdb_manager'
 import { LocationObserver } from './functions/LocationObserver'
 import { apply_primary_color } from './helpers/apply_primary_color'
-import { ControlPanel } from './layout/control-panel/ControlPanel'
+import { Footer } from './layout/footer/Footer.'
 import { Topbar } from './layout/topbar/Topbar'
 import { GrowingSpinners } from './mini-components/GrowingSpinners'
 import { MessageModal } from './mini-components/MessageModal'
@@ -43,13 +43,13 @@ export const App = observer(() => {
     }, [pen_color])
 
     return initData ? (
-        <>
+        <div className="flex h-full flex-col">
             <Topbar />
             <AppRoutes />
-            <ControlPanel />
             <MessageModal />
             <LocationObserver />
-        </>
+            <Footer />
+        </div>
     ) : (
         <GrowingSpinners />
     )

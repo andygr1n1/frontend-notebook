@@ -1,0 +1,9 @@
+:root {
+    --owner-badge-bg: #374151;
+    --owner-badge-text-color: white;
+}
+
+body.dark-theme {
+    --owner-badge-bg: #ffffff;
+    --owner-badge-text-color: #333;
+}

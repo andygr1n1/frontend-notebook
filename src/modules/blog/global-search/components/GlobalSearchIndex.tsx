@@ -6,11 +6,14 @@ import { GlobalSearchSubroutes } from './GlobalSearchSubroutes'
 
 export const GlobalSearchIndex = observer(() => {
     return (
-        <Content>
-            <h1>Global Search</h1>
-            <GlobalSearchCheckboxes />
-            <GlobalSearchInput />
-            <GlobalSearchSubroutes />
-        </Content>
+        <div>
+            <div className="h-full min-w-[300px] bg-red-200">sidemenu</div>
+            <Content>
+                <h1>Global Search</h1>
+                <GlobalSearchCheckboxes />
+                <GlobalSearchInput />
+                <GlobalSearchSubroutes />
+            </Content>
+        </div>
     )
 })

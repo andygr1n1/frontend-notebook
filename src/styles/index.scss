@@ -4,11 +4,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import './normalize.css';
 @import 'material-icons/iconfont/material-icons.css';
+@font-face {
+    font-family: "dankMonoRegular";
+    src: url("../assets/fonts/dank_mono_regular.otf");}
+
+@font-face {
+    font-family: "dankMonoBold";
+    src: url("../assets/fonts/dank_mono_bold.otf");}
+
+@import './normalize.css';
+
 @import 'antd/dist/antd.css';
 @import './_variables.scss';
 @import './_root_variables.scss';
+@import './components/owner_badge.scss';
 
 @tailwind base;
 @tailwind components;
@@ -37,9 +47,12 @@
         @apply text-primary-color;
     }
 
+    html, body {
+        @apply flex flex-col h-full w-full;
+    }
+
     body {
-        /* @apply px-36 bg-gray-900; */
-        @apply flex items-center justify-center overflow-hidden 2xl:px-36;
+        @apply 2xl:px-36;
         background-color: #111827;
         background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e5e7eb' fill-opacity='0.35' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
         -webkit-font-smoothing: antialiased;
@@ -47,7 +60,7 @@
     }
 
     #root {
-        @apply relative flex h-full w-[1640px] animate-fade-in-down flex-col gap-3 bg-white  font-sans text-base text-gray-600 selection:bg-primary-color;
+        @apply relative w-[1640px] animate-fade-in-down gap-3 bg-white  font-sans text-base text-gray-600 selection:bg-primary-color flex-auto;
     }
 
     body.dark-theme  #root {
@@ -71,12 +84,17 @@
     }
 
     h3 {
+        @apply text-3xl;
+    }
+
+
+    h4 {
         @apply text-xl;
     }
 
     h1,
     h2,
-    h3 {
+    h3, h4 {
         @apply select-none font-serif font-bold;
     }
 

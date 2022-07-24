@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import { GitNotes } from './modules/blog/git/GitNotes'
-import { GlobalSearch } from './modules/blog/global-search/GlobalSearch'
 import { ReactNotes } from './modules/blog/react/ReactNotes'
 import { GitIndex } from './modules/blog/git/pages/GitIndex'
 import { GlobalSearchIndex } from './modules/blog/global-search/components/GlobalSearchIndex'
@@ -49,11 +48,11 @@ export const AppRoutes = () => {
             <Route path={`/${GLOBAL_ROUTE.CV}`} element={<Cv />}>
                 <Route path="" element={<Cv />} />
             </Route>
+
             <Route path={`/${GLOBAL_ROUTE.BLOG}`} element={<Blog />}>
                 <Route path="" element={<Blog />} />
             </Route>
-
-            <Route path={`/${CATALOG_ROUTE.SEARCH}/*`} element={<GlobalSearch />}>
+            <Route path={`/${CATALOG_ROUTE.SEARCH}/*`} element={<GlobalSearchIndex />}>
                 <Route path="" element={<GlobalSearchIndex />} />
             </Route>
             <Route path={`/${CATALOG_ROUTE.GIT}/*`} element={<GitNotes />}>

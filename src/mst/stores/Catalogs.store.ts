@@ -12,6 +12,7 @@ export const Catalogs$ = types
         article_search: '',
         global_search: '',
         active_catalog: types.late(() => types.safeReference(Catalog)),
+        active_blog_tag: types.late(() => types.safeReference(Catalog)),
     })
     .actions((self) => ({
         onChangeField<Key extends keyof typeof self>(key: Key, value: typeof self[Key]) {
@@ -20,7 +21,7 @@ export const Catalogs$ = types
     }))
     .views((self) => ({
         get allInfoCatalogs(): ICatalog[] {
-            return _.drop(self.all_catalogs$, 1)
+            return self.all_catalogs$
         },
         get navMenuCatalogs(): ICatalog[] {
             return _.take(self.all_catalogs$, 6)

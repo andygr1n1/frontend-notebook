@@ -4,7 +4,12 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         fontFamily: {
-            sans: ['var(--font-body)', ...defaultTheme.fontFamily.sans],
+            sans: [
+                'dankMonoRegular',
+                'var(--font-body)',
+                ...defaultTheme.fontFamily.sans,
+            ],
+            'sans-bold': ['dankMonoBold', ...defaultTheme.fontFamily.sans],
             serif: ['Roboto Slab', ...defaultTheme.fontFamily.serif],
             mono: ['var(--font-mono)', ...defaultTheme.fontFamily.mono],
         },
